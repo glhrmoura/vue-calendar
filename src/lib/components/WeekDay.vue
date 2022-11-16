@@ -11,9 +11,9 @@
     }"
   >
     <div
-      class="vue-scheduler__week-day__day-number"
+      class="vue-scheduler__week-day__info"
       :class="{
-        'vue-scheduler__week-day__day-number--highlight': isToday || firstDayMonth
+        'vue-scheduler__week-day__info--highlight': isToday || firstDayMonth
       }"
     >
       <span v-if="isToday">
@@ -26,13 +26,12 @@
     </div>
 
     <div v-if="range && day.rule" class="vue-scheduler__week-day__schedules">
-      <div
-        :key="index"
+      <Interval
         v-for="(interval, index) in day.rule.intervals"
+        :key="index"
+        :interval="interval"
         class="vue-scheduler__week-day__event"
-      >
-        {{ interval.from }} - {{ interval.to }}
-      </div>
+      />
     </div>
   </td>
 </template>
@@ -44,15 +43,19 @@ import type { WeekDay } from '@/types';
 
 import dateMixin from '@/mixins/date';
 
+import Interval from '@/components/Interval.vue';
+
 export default defineComponent({
   name: 'WeekDay',
 
   mixins: [dateMixin],
 
+  components: {
+    Interval,
+  },
+
   data() {
     return {
-      selectionTarget: null,
-      selectionOrigin: null,
       weekDays: [
         'Sunday',
         'Monday',
@@ -157,11 +160,6 @@ export default defineComponent({
 
   &.vue-scheduler__week-day--in-range {
     background-color: #fff;
-
-    .vue-scheduler__week-day__event {
-      border-color: green;
-      color: blue;
-    }
   }
 
   @media (min-width: 769px) {
@@ -174,20 +172,16 @@ export default defineComponent({
       background-color: #f2f6ff;
       box-shadow: 0px 0px 0px 1px #6382C6;
       z-index: 10;
-
-      .vue-scheduler__week-day__event {
-        background-color: #fff;
-      }
     }
   }
 }
 
-.vue-scheduler__week-day__day-number {
+.vue-scheduler__week-day__info {
   text-align: center;
   text-transform: uppercase;
 }
 
-.vue-scheduler__week-day__day-number--highlight {
+.vue-scheduler__week-day__info--highlight {
   font-weight: 800;
 }
 
@@ -195,23 +189,5 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   margin-top: 12px;
-}
-
-.vue-scheduler__week-day__event {
-  background-color: inherit;
-  border-color: green;
-  color: blue;
-  border-radius: 44px;
-  padding: 4px 0px;
-  text-align: center;
-
-  &:not(:first-child) {
-    margin-top: 8px;
-  }
-
-  @media (max-width: 768px) {
-    text-align: center;
-    padding: 8px 8px;
-  }
 }
 </style>
