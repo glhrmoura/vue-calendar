@@ -1,7 +1,7 @@
 {
   "name": "@glhrmoura/vue-scheduler",
   "version": "0.1.1",
-  "main": "./dist/vue-scheduler.common.js",
+  "main": "./lib/vue-scheduler.common.js",
   "description": "A library to assist in scheduling appointments.",
   "scripts": {
     "serve": "vue-cli-service serve",
