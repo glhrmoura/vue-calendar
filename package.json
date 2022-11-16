@@ -1,16 +1,15 @@
 {
-  "name": "vue-scheduler",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@glhrmoura/vue-scheduler",
+  "version": "0.1.1",
+  "main": "./dist/vue-scheduler.common.js",
+  "description": "A library to assist in scheduling appointments.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:npm": "vue-cli-service build --target lib --name vue-scheduler src/lib/index.js && rm ./lib/demo.html"
   },
-  "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
@@ -23,6 +22,11 @@
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
-    "typescript": "~4.5.5"
-  }
+    "typescript": "~4.5.5",
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13"
+  },
+  "files": [
+    "lib/*"
+  ]
 }
