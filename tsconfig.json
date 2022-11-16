@@ -12,13 +12,12 @@
     "useDefineForClassFields": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "resolveJsonModule": true,
     "types": [
       "webpack-env"
     ],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/lib/*"],
     },
     "lib": [
       "esnext",
@@ -32,8 +31,8 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
-, "src/components/Scheduler/event-bus/index.js"  ],
+    "tests/**/*.tsx",
+    "src/components/Scheduler/event-bus/index.js"  ],
   "exclude": [
     "node_modules"
   ]
