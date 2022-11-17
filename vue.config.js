@@ -10,12 +10,6 @@ module.exports = defineConfig({
     extract: false,
   },
   configureWebpack: {
-    resolve: {
-      extensions: ['.js', '.vue', '.json'],
-      alias: {
-        '@': path.resolve(__dirname, './src/lib')
-      },
-    },
     optimization: {
       minimize: true,
     },
