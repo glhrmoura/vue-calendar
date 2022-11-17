@@ -10,7 +10,6 @@
 
       <Button
         type="arrow"
-        :arrowOnLeft="true"
         arrowDir="left"
         @click="onBackPage"
       />
@@ -29,7 +28,7 @@ import { defineComponent } from 'vue';
 import Button from '@/components/Button.vue';
 
 export default defineComponent({
-  name: 'Scheduler',
+  name: 'SchedulerControls',
 
   components: {
     Button,
