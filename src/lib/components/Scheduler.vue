@@ -184,6 +184,7 @@ export default defineComponent({
       this.dates = this.getDatesInOffset(this.calenderStartDay, this.offsetDays);
     },
   },
+
   computed: {
     offsetDays() {
       return this.rows * 7;
@@ -258,7 +259,7 @@ export default defineComponent({
 
 .vue-scheduler__controls {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 8px;
 }
 
