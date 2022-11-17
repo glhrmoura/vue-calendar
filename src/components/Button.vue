@@ -1,24 +1,54 @@
 <template>
-  <button
+  <div
     :class="{
-      'button__link': typeIs('link'),
-      'button__arrow': typeIs('arrow'),
+      'vue-scheduler__button-container': true,
+      'vue-scheduler__button-container--arrow-left': arrowOnLeft,
     }"
   >
-    {{ label }}
-  </button>
+    <button
+      v-if="label"
+      :class="{
+        'vue-scheduler__button': true,
+        'vue-scheduler__button--link': typeIs('link'),
+        'vue-scheduler__button--arrow': typeIs('arrow'),
+      }"
+    >
+      {{ label }}
+    </button>
+
+    <ArrowIcon v-if="typeIs('arrow')" :size="arrowSize" :dir="arrowDir" />
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
+
+import { ButtonType, ArrowDir } from '@/types';
+
+import ArrowIcon from '@/components/ArrowIcon.vue';
 
 export default defineComponent({
+  name: 'Button',
+
+  components: {
+    ArrowIcon,
+  },
+
   props: {
     label: String,
 
     type: {
-      type: String,
+      type: String as PropType<ButtonType>,
       default: 'link',
+    },
+
+    arrowSize: Number,
+
+    arrowDir: String as PropType<ArrowDir>,
+
+    arrowOnLeft: {
+      type: Boolean,
+      default: false,
     },
   },
 
@@ -31,27 +61,30 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.button__link {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  text-decoration: underline;
-  font-size: 14px;
-  margin-right: 12px;
-}
+.vue-scheduler__button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4px;
 
-.button__arrow {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  transition: all 0.1s;
-
-  &:active {
-    transform: scale(0.8);
+  &--arrow-left {
+    flex-direction: row-reverse;
   }
 
-  &:not(:last-child) {
-    margin-right: 12px;
+  &, .vue-scheduler__button {
+    cursor: pointer;
+  }
+}
+
+.vue-scheduler__button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  padding: 0px;
+  
+  &--link {
+    text-decoration: underline;
   }
 }
 </style>
