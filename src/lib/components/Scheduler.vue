@@ -66,6 +66,8 @@ import WeekDayTitle from '@/components/WeekDayTitle.vue';
 export default defineComponent({
   name: 'Scheduler',
 
+  expose: ['goToToday', 'prevPage', 'nextPage'],
+
   components: {
     Week,
     Button,
