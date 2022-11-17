@@ -1,6 +1,5 @@
 <template>
   <button
-    @click="$emit('click', $event)"
     :class="{
       'button__link': typeIs('link'),
       'button__arrow': typeIs('arrow'),
