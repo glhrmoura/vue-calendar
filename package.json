@@ -4,10 +4,11 @@
   "main": "./lib/vue-scheduler.common.js",
   "description": "A library to assist in scheduling appointments.",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:npm": "vue-cli-service build --target lib --name vue-scheduler src/lib/index.ts && rm ./lib/demo.html && rm ./lib/vue-scheduler.umd.js && rm ./lib/vue-scheduler.umd.min.js"
+    "serve": "vue-cli-service serve example/main.ts",
+    "build": "vue-cli-service build",
+    "build:npm": "vue-cli-service build --target lib --name vue-scheduler src/index.ts && yarn build:remove-files",
+    "build:remove-files": "rm ./lib/demo.html && rm ./lib/vue-scheduler.umd.js && rm ./lib/vue-scheduler.umd.min.js"
   },
   "dependencies": {},
   "devDependencies": {
