@@ -1,3 +1,7 @@
+export type ArrowDir = 'top' | 'right' | 'bottom' | 'left';
+
+export type ButtonType = 'arrow' | 'link';
+
 export interface Interval {
   from: string;
   to: string;
