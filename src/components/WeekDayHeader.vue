@@ -1,5 +1,5 @@
 <template>
-  <th class="week-day-title">
+  <th class="week-day-header">
     <slot />
   </th>
 </template>
@@ -22,7 +22,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.week-day-title {
+.week-day-header {
   flex-grow: 1;
   text-align: center;
   color: #a8a8a8;
