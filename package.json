@@ -1,13 +1,13 @@
 {
   "name": "@glhrmoura/vue-scheduler",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "main": "./lib/vue-scheduler.common.js",
   "description": "A library to assist in scheduling appointments.",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:npm": "vue-cli-service build --target lib --name vue-scheduler src/lib/index.js && rm ./lib/demo.html"
+    "build:npm": "vue-cli-service build --target lib --name vue-scheduler src/lib/index.ts && rm ./lib/demo.html && rm ./lib/vue-scheduler.umd.js && rm ./lib/vue-scheduler.umd.min.js"
   },
   "dependencies": {},
   "devDependencies": {
