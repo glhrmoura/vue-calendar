@@ -3,6 +3,20 @@
   "version": "0.1.0",
   "main": "./lib/vue-scheduler.common.js",
   "description": "A library to assist in scheduling appointments.",
+  "author": "Guilherme Moura <mouraggui@gmail.com>",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glhrmoura/vue-scheduler"
+  },
+  "bugs": {
+    "url": "https://github.com/glhrmoura/vue-scheduler/issues"
+  },
+  "keywords": [
+    "vue",
+    "scheduler",
+    "calendar"
+  ],
   "scripts": {
     "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve example/main.ts",
