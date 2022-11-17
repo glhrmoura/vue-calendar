@@ -247,11 +247,10 @@ export default defineComponent({
 }
 
 .vue-scheduler__week-days {
-  display: flex;
-  background-color: red;
-  border-radius: 4px 4px 0px 0px;
-  border-color: blue;
   display: grid;
+  background-color: #f6f6f6;
+  border-radius: 2px 2px 0px 0px;
+  box-shadow: 0px 0px 0px 1px #cfcaca;
   grid-template-columns: repeat(7, minmax(100px, 1fr));
 }
 

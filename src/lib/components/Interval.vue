@@ -19,12 +19,11 @@ export default defineComponent({
 <style scoped lang="scss">
 .vue-scheduler__week-day__event {
   background-color: inherit;
-  border-color: green;
-  color: blue;
+  color: #cfcaca;
   border-radius: 44px;
   padding: 4px 0px;
   text-align: center;
-  border: 1px solid red;
+  border: 1px solid #cfcaca;
 
   &:not(:first-child) {
     margin-top: 8px;
