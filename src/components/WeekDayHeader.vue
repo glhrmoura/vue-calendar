@@ -8,7 +8,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'WeekDayTitle',
+  name: 'WeekDayHeader',
 
   props: {
     label: String,

@@ -10,9 +10,9 @@
     <table class="vue-scheduler__calendar-content">
       <thead>
         <tr class="vue-scheduler__week-days">
-          <WeekDayTitle v-for="weekday in weekDays" :key="weekday">
+          <WeekDayHeader v-for="weekday in weekDays" :key="weekday">
             {{ weekday }}
-          </WeekDayTitle>
+          </WeekDayHeader>
         </tr>
       </thead>
 
@@ -44,7 +44,7 @@ import type { SchedulerData, Rule, Range, WeekDayEvent } from '@/types';
 
 import Week from '@/components/Week.vue';
 import WeekDay from '@/components/WeekDay.vue';
-import WeekDayTitle from '@/components/WeekDayTitle.vue';
+import WeekDayHeader from '@/components/WeekDayHeader.vue';
 import SchedulerControls from '@/components/SchedulerControls.vue';
 
 export default defineComponent({
@@ -55,7 +55,7 @@ export default defineComponent({
   components: {
     Week,
     WeekDay,
-    WeekDayTitle,
+    WeekDayHeader,
     SchedulerControls,
   },
 
