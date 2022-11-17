@@ -1,27 +1,11 @@
 <template>
   <div class="vue-scheduler">
-    <div class="vue-scheduler__controls">
-      <div class="vue-scheduler__controls-buttons">
-        <Button
-          v-if="!todayInPage"
-          type="link"
-          label="Back to Today"
-          @click="goToToday"
-        />
-
-        <Button
-          type="arrow"
-          label="Back"
-          @click="prevPage"
-        />
-
-        <Button
-          type="arrow"
-          label="Next"
-          @click="nextPage"
-        />
-      </div>
-    </div>
+    <SchedulerControls
+      :todayInPage="todayInPage"
+      @nextPage="nextPage"
+      @backPage="backPage"
+      @goToToday="goToToday"
+    />
 
     <table class="vue-scheduler__calendar-content">
       <thead>
@@ -59,20 +43,20 @@ import mixinDateHelper from '@/mixins/date';
 import type { SchedulerData, Rule, Range, WeekDayEvent } from '@/types';
 
 import Week from '@/components/Week.vue';
-import Button from '@/components/Button.vue';
 import WeekDay from '@/components/WeekDay.vue';
 import WeekDayTitle from '@/components/WeekDayTitle.vue';
+import SchedulerControls from '@/components/SchedulerControls.vue';
 
 export default defineComponent({
   name: 'Scheduler',
 
-  expose: ['goToToday', 'prevPage', 'nextPage'],
+  expose: ['goToToday', 'backPage', 'nextPage'],
 
   components: {
     Week,
-    Button,
     WeekDay,
     WeekDayTitle,
+    SchedulerControls,
   },
 
   mixins: [mixinDateHelper],
@@ -170,7 +154,7 @@ export default defineComponent({
       this.calenderStartDay = new Date();
     },
 
-    prevPage() {
+    backPage() {
       const nextDate = this.calenderStartDay.getDate() - this.offsetDays;
       this.calenderStartDay = new Date(this.calenderStartDay.setDate(nextDate));
     },
@@ -255,16 +239,5 @@ export default defineComponent({
   border-radius: 2px 2px 0px 0px;
   box-shadow: 0px 0px 0px 1px #cfcaca;
   grid-template-columns: repeat(7, minmax(100px, 1fr));
-}
-
-.vue-scheduler__controls {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 8px;
-}
-
-.vue-scheduler__controls-buttons {
-  display: flex;
-  align-items: center;
 }
 </style>
