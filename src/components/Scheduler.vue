@@ -91,7 +91,7 @@ export default defineComponent({
         'Wednesday',
         'Thursday',
         'Friday',
-        'Saturday'
+        'Saturday',
       ],
     };
   },
@@ -110,7 +110,7 @@ export default defineComponent({
     range: {
       type: Object as PropType<Range>,
       default: () => ({ start: new Date() }),
-    }
+    },
   },
 
   mounted() {

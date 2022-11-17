@@ -19,15 +19,15 @@ export default defineComponent({
     type: {
       type: String,
       default: 'link',
-    }
+    },
   },
 
   methods: {
     typeIs(type: string): boolean {
       return this.type === type;
     },
-  }
-})
+  },
+});
 </script>
 
 <style lang="scss" scoped>

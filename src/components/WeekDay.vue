@@ -63,7 +63,7 @@ export default defineComponent({
         'Wednesday',
         'Thursday',
         'Friday',
-        'Saturday'
+        'Saturday',
       ],
       months: [
         'January',
@@ -77,7 +77,7 @@ export default defineComponent({
         'September',
         'October',
         'November',
-        'December'
+        'December',
       ],
     };
   },

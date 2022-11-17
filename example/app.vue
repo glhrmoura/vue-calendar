@@ -27,9 +27,9 @@ export default defineComponent({
       {
         date: new Date('11/17/2022'),
         intervals: [
-          { from: '09:20', to: '12:45' }
-        ]
-      }
+          { from: '09:20', to: '12:45' },
+        ],
+      },
     ],
   }),
 });
