@@ -1,5 +1,5 @@
 {
-  "name": "@glhrmoura/vue-scheduler",
+  "name": "@glhrm/vue-scheduler",
   "version": "0.1.0",
   "main": "./lib/vue-scheduler.common.js",
   "description": "A library to assist in scheduling appointments.",
