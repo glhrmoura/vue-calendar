@@ -1,4 +1,4 @@
-import { App, Plugin } from 'vue'
+import { App, Plugin } from 'vue';
 
 import Scheduler from '@/components/Scheduler.vue';
 
