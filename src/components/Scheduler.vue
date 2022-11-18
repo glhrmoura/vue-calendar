@@ -38,7 +38,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import mixinDateHelper from '@/mixins/date';
+import dateMixin from '@/mixins/date';
 
 import type { SchedulerData, WeekDayEvent, Range, WeekDayActionEvent } from '@/types';
 
@@ -59,7 +59,7 @@ export default defineComponent({
     Controls,
   },
 
-  mixins: [mixinDateHelper],
+  mixins: [dateMixin],
 
   data(): SchedulerData {
     return {
