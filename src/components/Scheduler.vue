@@ -93,7 +93,7 @@ export default defineComponent({
 
     range: {
       type: Object as PropType<DateRange>,
-      default: () => ({ start: new Date() }),
+      default: () => ({}),
     },
   },
 
@@ -122,7 +122,7 @@ export default defineComponent({
 
     onWeekDayMouseUp() {
       if (this.selectedDates.length > 1) {
-        this.$emit('selectDates', this.selectedDates);
+        this.$emit('selectDates', { dates: this.selectedDates });
       }
 
       this.selectedRange = [];
