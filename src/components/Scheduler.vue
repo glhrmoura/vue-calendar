@@ -67,7 +67,7 @@ export default defineComponent({
       selectedRange: [],
       selectionOrigin: null,
       inMutipleSelection: false,
-      calenderStartDayData: new Date(),
+      schedulerStartDayData: new Date(),
       weekDays: [
         'Sunday',
         'Monday',
@@ -98,19 +98,19 @@ export default defineComponent({
   },
 
   mounted() {
-    this.calenderStartDay = new Date(this.range.start || Date.now());
+    this.schedulerStartDay = new Date(this.range.start || Date.now());
   },
 
   watch: {
     'range.start'(newValue) {
-      this.calenderStartDay = new Date(newValue);
+      this.schedulerStartDay = new Date(newValue);
     },
 
     offsetDays() {
       this.generateDays();
     },
 
-    calenderStartDay() {
+    schedulerStartDay() {
       this.generateDays();
     },
   },
@@ -151,21 +151,21 @@ export default defineComponent({
     },
 
     goToToday() {
-      this.calenderStartDay = new Date();
+      this.schedulerStartDay = new Date();
     },
 
     backPage() {
-      const nextDate = this.calenderStartDay.getDate() - this.offsetDays;
-      this.calenderStartDay = new Date(this.calenderStartDay.setDate(nextDate));
+      const nextDate = this.schedulerStartDay.getDate() - this.offsetDays;
+      this.schedulerStartDay = new Date(this.schedulerStartDay.setDate(nextDate));
     },
 
     nextPage() {
-      const nextDate = this.calenderStartDay.getDate() + this.offsetDays;
-      this.calenderStartDay = new Date(this.calenderStartDay.setDate(nextDate));
+      const nextDate = this.schedulerStartDay.getDate() + this.offsetDays;
+      this.schedulerStartDay = new Date(this.schedulerStartDay.setDate(nextDate));
     },
 
     generateDays() {
-      this.dates = this.getDatesInOffset(this.calenderStartDay, this.offsetDays);
+      this.dates = this.getDatesInOffset(this.schedulerStartDay, this.offsetDays);
     },
   },
 
@@ -186,15 +186,15 @@ export default defineComponent({
 
     todayInPage() {
       const currTime = Date.now();
-      const startTime = this.calenderStartDay.getTime();
+      const startTime = this.schedulerStartDay.getTime();
       const endTime = this.calenderEndDay.getTime();
 
       return startTime <= currTime && currTime <= endTime;
     },
 
-    calenderStartDay: {
+    schedulerStartDay: {
       get() {
-        return this.calenderStartDayData;
+        return this.schedulerStartDayData;
       },
 
       set(value: Date) {
@@ -205,12 +205,12 @@ export default defineComponent({
           value.setDate(monthDay - weekDay);
         }
 
-        this.calenderStartDayData = value;
+        this.schedulerStartDayData = value;
       },
     },
 
     calenderEndDay() {
-      const date = new Date(this.calenderStartDay);
+      const date = new Date(this.schedulerStartDay);
       const monthDay = date.getDate();
 
       date.setHours(23, 59, 59);

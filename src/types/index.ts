@@ -32,6 +32,6 @@ export interface SchedulerData {
   selectedRange: Date[];
   selectionOrigin: Date | null;
   inMutipleSelection: boolean;
-  calenderStartDayData: Date;
+  schedulerStartDayData: Date;
   weekDays: string[];
 }
