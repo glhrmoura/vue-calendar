@@ -117,12 +117,12 @@ export default defineComponent({
 
   methods: {
     onWeekDayClick(event: WeekDayActionEvent) {
-      this.$emit('select-date', event);
+      this.$emit('selectDate', event);
     },
 
     onWeekDayMouseUp() {
       if (this.selectedDates.length > 1) {
-        this.$emit('select-dates', this.selectedDates);
+        this.$emit('selectDates', this.selectedDates);
       }
 
       this.selectedRange = [];
