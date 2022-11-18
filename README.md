@@ -99,4 +99,4 @@ $ yarn add @glhrm/vue-scheduler
 
 [MIT](https://github.com/glhrmoura/vue-scheduler/blob/main/LICENSE)
 
-Copyright (c) 2022 - Guilherme Moura
+Copyright (c) Guilherme Moura
