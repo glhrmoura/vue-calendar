@@ -6,6 +6,7 @@
   "description": "A library to assist in scheduling appointments.",
   "author": "Guilherme Moura <mouraggui@gmail.com>",
   "private": false,
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/glhrmoura/vue-scheduler"
