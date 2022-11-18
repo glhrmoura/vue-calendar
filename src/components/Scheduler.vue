@@ -1,6 +1,6 @@
 <template>
   <div class="vue-scheduler">
-    <SchedulerControls
+    <Controls
       :todayInPage="todayInPage"
       @nextPage="nextPage"
       @backPage="backPage"
@@ -19,11 +19,11 @@
       <tbody>
         <Week v-for="(week, index) in weeks" :key="index">
           <WeekDay
-            v-for="(weekDay, index) in getDatesWithRules(week, rules)"
-            :day="weekDay"
+            v-for="(weekDay, index) in getWeekDaysWithEvents(week, events)"
             :key="index"
-            :selected="has(weekDay.date, selectedDates)"
-            :range="inRange(weekDay.date, range.start, range.end)"
+            :weekDay="weekDay"
+            :selected="containsDate(selectedDates, weekDay.date)"
+            :range="dateIsInRange(weekDay.date, range.start, range.end)"
             @weekDayClick="onWeekDayClick"
             @weekDayMouseUp="onWeekDayMouseUp"
             @weekDayMouseDown="onWeekDayMouseDown"
@@ -40,12 +40,12 @@ import { defineComponent, PropType } from 'vue';
 
 import mixinDateHelper from '@/mixins/date';
 
-import type { SchedulerData, Rule, Range, WeekDayEvent } from '@/types';
+import type { SchedulerData, WeekDayEvent, Range, WeekDayActionEvent } from '@/types';
 
 import Week from '@/components/Week.vue';
 import WeekDay from '@/components/WeekDay.vue';
 import WeekDayHeader from '@/components/WeekDayHeader.vue';
-import SchedulerControls from '@/components/SchedulerControls.vue';
+import Controls from '@/components/Controls.vue';
 
 export default defineComponent({
   name: 'Scheduler',
@@ -56,7 +56,7 @@ export default defineComponent({
     Week,
     WeekDay,
     WeekDayHeader,
-    SchedulerControls,
+    Controls,
   },
 
   mixins: [mixinDateHelper],
@@ -81,8 +81,8 @@ export default defineComponent({
   },
 
   props: {
-    rules: {
-      type: Array as PropType<Rule[]>,
+    events: {
+      type: Array as PropType<WeekDayEvent[]>,
       default: () => ([]),
     },
 
@@ -116,7 +116,7 @@ export default defineComponent({
   },
 
   methods: {
-    onWeekDayClick(event: WeekDayEvent) {
+    onWeekDayClick(event: WeekDayActionEvent) {
       this.$emit('select-date', event);
     },
 
@@ -130,7 +130,7 @@ export default defineComponent({
       this.selectionOrigin = null;
     },
 
-    onWeekDayMouseEnter(event: WeekDayEvent) {
+    onWeekDayMouseEnter(event: WeekDayActionEvent) {
       if (!this.inMutipleSelection || this.selectedRange.includes(event.date)) return;
 
       let [minDate, maxDate] = this.datesMinMax(this.selectedRange);
@@ -144,7 +144,7 @@ export default defineComponent({
       this.selectedRange = this.datesMinMax([minDate, maxDate]);
     },
 
-    onWeekDayMouseDown(event: WeekDayEvent) {
+    onWeekDayMouseDown(event: WeekDayActionEvent) {
       this.inMutipleSelection = true;
       this.selectionOrigin = event.date;
       this.selectedRange.push(event.date);

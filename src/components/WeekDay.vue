@@ -25,11 +25,14 @@
       </span>
     </div>
 
-    <div v-if="range && day.rule" class="vue-scheduler__week-day__schedules">
-      <Interval
-        v-for="(interval, index) in day.rule.intervals"
+    <div
+      v-if="range && weekDay.events && weekDay.events.length"
+      class="vue-scheduler__week-day__schedules"
+    >
+      <Event
+        v-for="(event, index) in weekDay.events"
         :key="index"
-        :interval="interval"
+        :event="event"
         class="vue-scheduler__week-day__event"
       />
     </div>
@@ -43,7 +46,7 @@ import type { WeekDay } from '@/types';
 
 import dateMixin from '@/mixins/date';
 
-import Interval from '@/components/Interval.vue';
+import Event from '@/components/Event.vue';
 
 export default defineComponent({
   name: 'WeekDay',
@@ -51,7 +54,7 @@ export default defineComponent({
   mixins: [dateMixin],
 
   components: {
-    Interval,
+    Event,
   },
 
   data() {
@@ -84,8 +87,10 @@ export default defineComponent({
 
   props: {
     range: Boolean,
+
     selected: Boolean,
-    day: {
+
+    weekDay: {
       type: Object as PropType<WeekDay>,
       default: () => ({}),
     },
@@ -93,19 +98,19 @@ export default defineComponent({
 
   methods: {
     onClick() {
-      this.$emit('week-day-click', { date: this.day.date });
+      this.$emit('week-day-click', { date: this.weekDay.date });
     },
 
     onMouseUp() {
-      this.$emit('week-day-mouse-up', { date: this.day.date });
+      this.$emit('week-day-mouse-up', { date: this.weekDay.date });
     },
 
     onMouseDown() {
-      this.$emit('week-day-mouse-down', { date: this.day.date });
+      this.$emit('week-day-mouse-down', { date: this.weekDay.date });
     },
 
     onMouseEnter() {
-      this.$emit('week-day-mouse-enter', { date: this.day.date });
+      this.$emit('week-day-mouse-enter', { date: this.weekDay.date });
     },
   },
 
@@ -114,9 +119,9 @@ export default defineComponent({
       const currDate = new Date();
 
       return (
-        this.day.date.getDate() === currDate.getDate()
-        && this.day.date.getMonth() === currDate.getMonth()
-        && this.day.date.getFullYear() === currDate.getFullYear()
+        this.weekDay.date.getDate() === currDate.getDate()
+        && this.weekDay.date.getMonth() === currDate.getMonth()
+        && this.weekDay.date.getFullYear() === currDate.getFullYear()
      );
     },
 
@@ -124,24 +129,16 @@ export default defineComponent({
       return this.monthDay === 1;
     },
 
-    weekDay() {
-      return this.day.date.getDay();
-    },
-
-    month() {
-      return this.day.date.getMonth();
-    },
-
     monthDay() {
-      return this.day.date.getDate();
+      return this.weekDay.date.getDate();
     },
 
     stringMonth() {
-      return this.months[this.month];
+      return this.months[this.weekDay.date.getMonth()];
     },
 
     stringWeekDay() {
-      return this.weekDays[this.weekDay];
+      return this.weekDays[this.weekDay.date.getDay()];
     },
   },
 });
@@ -157,6 +154,7 @@ export default defineComponent({
   background-color: #f6f6f6;
   box-shadow: 0px 0px 0px 1px #cfcaca;
   box-sizing: border-box;
+  max-height: 150px;
 
   &.vue-scheduler__week-day--in-range {
     background-color: #fff;
@@ -189,5 +187,6 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   margin-top: 12px;
+  row-gap: 6px;
 }
 </style>

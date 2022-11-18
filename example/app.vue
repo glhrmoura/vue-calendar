@@ -1,7 +1,7 @@
 <template>
   <Scheduler
     :range="range"
-    :rules="rules"
+    :events="events"
   />
 </template>
 
@@ -20,15 +20,21 @@ export default defineComponent({
   data: () => ({
     range: {
       start: new Date('11/05/2022'),
-      end: new Date('11/22/2022'),
+      end: new Date('12/22/2022'),
     },
 
-    rules: [
+    events: [
+      {
+        wday: 'friday',
+        interval: { from: '09:20', to: '12:45' },
+      },
       {
         date: new Date('11/17/2022'),
-        intervals: [
-          { from: '09:20', to: '12:45' },
-        ],
+        interval: { from: '09:20', to: '12:45' },
+      },
+      {
+        date: new Date('11/17/2022'),
+        interval: { from: '09:20', to: '12:45' },
       },
     ],
   }),
