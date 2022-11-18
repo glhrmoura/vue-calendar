@@ -1,30 +1,30 @@
-export type ArrowDir = 'top' | 'right' | 'bottom' | 'left';
-
 export type ButtonType = 'arrow' | 'link';
 
-export interface Interval {
+export type ArrowDirection = 'top' | 'right' | 'bottom' | 'left';
+
+export interface TimeInterval {
   from: string;
   to: string;
 }
 
-export interface Range {
+export interface DateRange {
   start?: Date;
   end?: Date;
 }
 
-export interface WeekDayActionEvent {
-  date: Date;
-}
-
-export interface WeekDayEvent {
+export interface EventDate {
   date?: Date;
   wday?: string;
-  interval: Interval;
+  interval: TimeInterval;
 }
 
 export interface WeekDay {
   date: Date;
-  events: WeekDayEvent[];
+  events: EventDate[];
+}
+
+export interface WeekDayActionData {
+  date: Date;
 }
 
 export interface SchedulerData {
