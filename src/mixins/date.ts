@@ -1,4 +1,4 @@
-import type { Rule, WeekDay } from '@/types';
+import type { WeekDayEvent, WeekDay } from '@/types';
 
 const WEEK_DAYS = [
   'sunday',
@@ -12,7 +12,7 @@ const WEEK_DAYS = [
 
 export default {
   methods: {
-    has(date: Date, dates: Date[]) {
+    containsDate(dates: Date[], date: Date) {
       return Boolean(dates.find((dt) => this.sameDay(date, dt)));
     },
 
@@ -33,12 +33,13 @@ export default {
       return output;
     },
 
-    getDatesWithRules(dates: Date[] = [], rules: Rule[] = []): WeekDay[] {
+    getWeekDays(dates: Date[] = [], events: WeekDayEvent[] = []): WeekDay[] {
       return dates.map((date: Date) => ({
         date,
-        rule:
-          rules.find((rule: Rule) => this.sameDay(rule.date, date)) ||
-          rules.find((rule: Rule) => rule.wday === WEEK_DAYS[date.getDay()]),
+        events: events.filter((event) => (
+          this.sameDay(event.date, date)) ||
+          event.wday === WEEK_DAYS[date.getDay()],
+        ),
       }));
     },
 
@@ -55,7 +56,7 @@ export default {
       return days;
     },
 
-    getDatesInOffset(date: Date, offset: number) {
+    getDatesInOffset(date: Date, offset: number): Date[] {
       const days = [];
 
       for (let i = 1; i <= offset; i++) {
@@ -80,7 +81,7 @@ export default {
       return date1.toDateString() === date2.toDateString();
     },
 
-    inRange(date: Date, startRange?: Date, endRange?: Date) {
+    dateIsInRange(date: Date, startRange?: Date, endRange?: Date) {
       if (startRange && endRange) {
         const start = new Date(startRange);
         const end = new Date(endRange);
