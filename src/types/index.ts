@@ -12,23 +12,23 @@ export interface Range {
   end?: Date;
 }
 
-export interface WeekDayEvent {
+export interface WeekDayActionEvent {
   date: Date;
 }
 
-export interface Rule {
+export interface WeekDayEvent {
   date?: Date;
   wday?: string;
-  intervals: Interval[];
+  interval: Interval;
 }
 
 export interface WeekDay {
   date: Date;
-  rule?: Rule;
+  events: WeekDayEvent[];
 }
 
 export interface SchedulerData {
-  dates: Date[];
+  dates: Date[] | string[];
   selectedRange: Date[];
   selectionOrigin: Date | null;
   inMutipleSelection: boolean;
