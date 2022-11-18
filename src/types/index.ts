@@ -28,7 +28,7 @@ export interface WeekDay {
 }
 
 export interface SchedulerData {
-  dates: Date[] | string[];
+  dates: Date[];
   selectedRange: Date[];
   selectionOrigin: Date | null;
   inMutipleSelection: boolean;
