@@ -19,7 +19,7 @@
       <tbody>
         <Week v-for="(week, index) in weeks" :key="index">
           <WeekDay
-            v-for="(weekDay, index) in getWeekDaysWithEvents(week, events)"
+            v-for="(weekDay, index) in getWeekDays(week, events)"
             :key="index"
             :weekDay="weekDay"
             :selected="containsDate(selectedDates, weekDay.date)"
