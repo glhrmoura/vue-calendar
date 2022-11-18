@@ -17,14 +17,14 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import { ArrowDir } from '@/types';
+import { ArrowDirection } from '@/types';
 
 export default defineComponent({
   name: 'ArrowIcon',
 
   props: {
     dir: {
-      type: String as PropType<ArrowDir>,
+      type: String as PropType<ArrowDirection>,
       default: 'right',
     },
 

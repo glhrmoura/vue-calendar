@@ -1,4 +1,4 @@
-import type { WeekDayEvent, WeekDay } from '@/types';
+import type { EventDate, WeekDay } from '@/types';
 
 const WEEK_DAYS = [
   'sunday',
@@ -33,7 +33,7 @@ export default {
       return output;
     },
 
-    getWeekDays(dates: Date[] = [], events: WeekDayEvent[] = []): WeekDay[] {
+    getWeekDays(dates: Date[] = [], events: EventDate[] = []): WeekDay[] {
       return dates.map((date: Date) => ({
         date,
         events: events.filter((event) => (

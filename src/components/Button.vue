@@ -23,7 +23,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import { ButtonType, ArrowDir } from '@/types';
+import { ButtonType, ArrowDirection } from '@/types';
 
 import ArrowIcon from '@/components/ArrowIcon.vue';
 
@@ -44,7 +44,7 @@ export default defineComponent({
 
     arrowSize: Number,
 
-    arrowDir: String as PropType<ArrowDir>,
+    arrowDir: String as PropType<ArrowDirection>,
 
     arrowOnLeft: {
       type: Boolean,

@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import type { WeekDayEvent } from '@/types';
+import type { EventDate } from '@/types';
 
 import Interval from '@/components/Interval.vue';
 
@@ -19,7 +19,7 @@ export default defineComponent({
   },
 
   props: {
-    event: Object as PropType<WeekDayEvent>,
+    event: Object as PropType<EventDate>,
   },
 });
 </script>

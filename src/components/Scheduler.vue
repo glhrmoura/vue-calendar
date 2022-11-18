@@ -40,7 +40,7 @@ import { defineComponent, PropType } from 'vue';
 
 import dateMixin from '@/mixins/date';
 
-import type { SchedulerData, WeekDayEvent, Range, WeekDayActionEvent } from '@/types';
+import type { SchedulerData, EventDate, DateRange, WeekDayActionData } from '@/types';
 
 import Week from '@/components/Week.vue';
 import WeekDay from '@/components/WeekDay.vue';
@@ -82,7 +82,7 @@ export default defineComponent({
 
   props: {
     events: {
-      type: Array as PropType<WeekDayEvent[]>,
+      type: Array as PropType<EventDate[]>,
       default: () => ([]),
     },
 
@@ -92,7 +92,7 @@ export default defineComponent({
     },
 
     range: {
-      type: Object as PropType<Range>,
+      type: Object as PropType<DateRange>,
       default: () => ({ start: new Date() }),
     },
   },
@@ -116,8 +116,8 @@ export default defineComponent({
   },
 
   methods: {
-    onWeekDayClick(event: WeekDayActionEvent) {
-      this.$emit('selectDate', event);
+    onWeekDayClick(data: WeekDayActionData) {
+      this.$emit('selectDate', data);
     },
 
     onWeekDayMouseUp() {
@@ -130,24 +130,24 @@ export default defineComponent({
       this.selectionOrigin = null;
     },
 
-    onWeekDayMouseEnter(event: WeekDayActionEvent) {
-      if (!this.inMutipleSelection || this.selectedRange.includes(event.date)) return;
+    onWeekDayMouseEnter(data: WeekDayActionData) {
+      if (!this.inMutipleSelection || this.selectedRange.includes(data.date)) return;
 
       let [minDate, maxDate] = this.datesMinMax(this.selectedRange);
 
       if (Number(this.selectionOrigin) === Number(minDate)) {
-        maxDate = event.date;
+        maxDate = data.date;
       } else {
-        minDate = event.date;
+        minDate = data.date;
       }
 
       this.selectedRange = this.datesMinMax([minDate, maxDate]);
     },
 
-    onWeekDayMouseDown(event: WeekDayActionEvent) {
+    onWeekDayMouseDown(data: WeekDayActionData) {
       this.inMutipleSelection = true;
-      this.selectionOrigin = event.date;
-      this.selectedRange.push(event.date);
+      this.selectionOrigin = data.date;
+      this.selectedRange.push(data.date);
     },
 
     goToToday() {
