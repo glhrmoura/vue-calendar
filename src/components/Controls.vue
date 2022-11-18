@@ -28,7 +28,7 @@ import { defineComponent } from 'vue';
 import Button from '@/components/Button.vue';
 
 export default defineComponent({
-  name: 'SchedulerControls',
+  name: 'Controls',
 
   components: {
     Button,
