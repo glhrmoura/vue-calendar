@@ -53,7 +53,7 @@ $ yarn add @glhrm/vue-scheduler
 </template>
 ```
 
-### Properties
+## Properties
 
 #### Scheduler
 
