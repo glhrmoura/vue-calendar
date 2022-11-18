@@ -1,4 +1,8 @@
-# Vue Scheduler
+<p align="center">
+  <img style="object: contain; height: 150px" alt="RapidAPI" src="https://raw.githubusercontent.com/glhrmoura/vue-scheduler/main/static/logo.png">
+</p>
+
+# 📅 Vue Scheduler
 
 A library to assist in scheduling appointments
 
@@ -31,11 +35,11 @@ $ yarn add @glhrm/vue-scheduler
             interval: { from: '09:20', to: '12:45' },
           },
           {
-            date: new Date('11/17/2022'),
+            date: new Date(),
             interval: { from: '08:10', to: '11:00' },
           },
           {
-            date: new Date('11/17/2022'),
+            date: new Date(),
             interval: { from: '14:40', to: '17:45' },
           },
         ],
