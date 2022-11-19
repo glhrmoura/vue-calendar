@@ -1,7 +1,7 @@
 <template>
   <div class="vue-scheduler">
     <Controls
-      v-if="showControls"
+      v-if="controls"
       :todayInPage="todayInPage"
       @nextPage="nextPage"
       @backPage="backPage"
@@ -92,7 +92,7 @@ export default defineComponent({
       default: 5,
     },
 
-    showControls: {
+    controls: {
       type: Boolean,
       default: true,
     },
