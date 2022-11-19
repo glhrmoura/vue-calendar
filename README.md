@@ -35,6 +35,12 @@ $ yarn add @glhrm/vue-scheduler
       return {
         events: [
           {
+          /**
+           * 
+           * Passing the {wday} property with the day of the week we 
+           * will have recurring events. 
+           *
+           **/
             wday: 'friday',
             interval: { from: '09:20', to: '12:45' },
           },
@@ -45,6 +51,26 @@ $ yarn add @glhrm/vue-scheduler
           {
             date: new Date(),
             interval: { from: '14:40', to: '17:45' },
+          },
+        ],
+
+        ranges: [
+          {
+            start: new Date('11/16/2022'),
+            end: new Date('12/02/2022'),
+          },
+          {
+            start: new Date('01/13/2023'),
+            end: new Date('01/19/2023'),
+          },
+          {
+          /**
+           *  
+           * Passing only the {start} property we will have a range that will 
+           * start on the given date and cover all subsequent dates
+           *
+           **/
+            start: new Date('04/19/2023'),
           },
         ],
       };
@@ -60,9 +86,17 @@ $ yarn add @glhrm/vue-scheduler
 | Property      | Description                                                | Type                | Default        |
 | ------------- | ---------------------------------------------------------- | ------------------- | -------------- |
 | events        | Events that will be shown on the scheduler                 | [Event[]](#event)   | `[]`           |
-| range         | A range of dates that will be highlighted in the scheduler | [Range](#range)     | `{}`           |
+| ranges        | A range of dates that will be highlighted in the scheduler | [Range[]](#range)   | `{}`           |
 | rows          | Number of lines that the scheduler will show               | `Number`            | `5`            |
 | controls      | Indicates whether action buttons will be shown             | `Boolean`           | `true`         |
+
+#### Event
+
+| Property          |  Description                                                     |  Type                 |
+| ----------------- | ---------------------------------------------------------------- | --------------------- |
+| wday              | Used to define recurring events                                  | `String`              |
+| date              | Used to set events on fixed dates (Takes precedence over `wday`) | `Date`                |
+| interval          | An object that informs the start and end time of the event       | [Interval](#interval) |
 
 #### Range
 
@@ -71,19 +105,10 @@ $ yarn add @glhrm/vue-scheduler
 | start           | Range start date   | `Date` |
 | end             | Range end date     | `Date` |
 
-
-#### Event
-
-| Property                  |  Description                                                     |  Type                 |
-| ------------------------- | ---------------------------------------------------------------- | --------------------- |
-| wday                      | Used to define recurring events                                  | `String`                |
-| date                      | Used to set events on fixed dates (Takes precedence over `wday`) | `Date`                  |
-| interval                  | An object that informs the start and end time of the event       | [Interval](#interval) | 
-
 #### Interval
 
-| Property        |  Description         |  Type   |
-| --------------- | -------------------- | ------- |
+| Property        |  Description         |  Type    |
+| --------------- | -------------------- | -------- |
 | from            | Event start time     | `String` |
 | to              | Event end time       | `String` |
 
