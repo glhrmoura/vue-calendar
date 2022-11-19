@@ -23,8 +23,8 @@
             v-for="(weekDay, index) in getWeekDays(week, events)"
             :key="index"
             :weekDay="weekDay"
-            :selected="containsDate(selectedDates, weekDay.date)"
-            :range="dateIsInRange(weekDay.date, range.start, range.end)"
+            :range="inRanges(weekDay.date, ranges)"
+            :selected="contains(weekDay.date, selectedDates)"
             @weekDayClick="onWeekDayClick"
             @weekDayMouseUp="onWeekDayMouseUp"
             @weekDayMouseDown="onWeekDayMouseDown"
@@ -97,14 +97,16 @@ export default defineComponent({
       default: true,
     },
 
-    range: {
-      type: Object as PropType<DateRange>,
-      default: () => ({}),
+    ranges: {
+      type: Array as PropType<DateRange[]>,
+      default: () => ([]),
     },
   },
 
   mounted() {
-    this.schedulerStartDay = new Date(this.range.start || Date.now());
+    const [range] = this.ranges || [];
+
+    this.schedulerStartDay = new Date(range?.start || Date.now());
   },
 
   watch: {
@@ -139,7 +141,7 @@ export default defineComponent({
     onWeekDayMouseEnter(data: WeekDayActionData) {
       if (!this.inMutipleSelection || this.selectedRange.includes(data.date)) return;
 
-      let [minDate, maxDate] = this.datesMinMax(this.selectedRange);
+      let [minDate, maxDate] = this.getMinAndMax(this.selectedRange);
 
       if (Number(this.selectionOrigin) === Number(minDate)) {
         maxDate = data.date;
@@ -147,7 +149,7 @@ export default defineComponent({
         minDate = data.date;
       }
 
-      this.selectedRange = this.datesMinMax([minDate, maxDate]);
+      this.selectedRange = this.getMinAndMax([minDate, maxDate]);
     },
 
     onWeekDayMouseDown(data: WeekDayActionData) {
@@ -181,7 +183,7 @@ export default defineComponent({
     },
 
     weeks() {
-      return this.splitArray(this.dates, 7);
+      return this.split(this.dates, 7);
     },
 
     selectedDates() {
