@@ -23,16 +23,16 @@ export default defineComponent({
   data: () => ({
     events: [
       {
-        wday: 'friday',
-        interval: { from: '09:20', to: '12:45' },
+        date: new Date('12/06/2022'),
+        interval: { from: '06:00', to: '08:45' },
       },
       {
-        date: new Date('11/17/2022'),
-        interval: { from: '09:20', to: '12:45' },
+        wday: ['monday', 'wednesday', 'thursday', 'friday'],
+        interval: { from: '09:00', to: '11:00' },
       },
       {
-        date: new Date('11/17/2022'),
-        interval: { from: '09:20', to: '12:45' },
+        wday: 'thursday',
+        interval: { from: '11:00', to: '12:00' },
       },
     ],
 
