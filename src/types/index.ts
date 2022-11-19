@@ -8,7 +8,7 @@ export interface TimeInterval {
 }
 
 export interface DateRange {
-  start?: Date;
+  start: Date;
   end?: Date;
 }
 
