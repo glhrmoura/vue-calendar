@@ -1,4 +1,4 @@
-import type { EventDate, WeekDay } from '@/types';
+import type { EventDate, WeekDay, DateRange } from '@/types';
 
 const WEEK_DAYS = [
   'sunday',
@@ -12,18 +12,11 @@ const WEEK_DAYS = [
 
 export default {
   methods: {
-    containsDate(dates: Date[], date: Date) {
-      return Boolean(dates.find((dt) => this.sameDay(date, dt)));
+    contains(date: Date, dates: Date[]) {
+      return Boolean(dates.find((dateItem) => this.equalDay(date, dateItem)));
     },
 
-    datesMinMax(dates: Date[] = []) {
-      return [
-        new Date(Math.min(...dates.map(Number))),
-        new Date(Math.max(...dates.map(Number))),
-      ];
-    },
-
-    splitArray(array: Date[] = [], subLen: number): Array<Date[]> {
+    split(array: Date[] = [], subLen: number): Array<Date[]> {
       const output = [];
 
       for (let i = 0; i < array.length; i += subLen) {
@@ -33,14 +26,37 @@ export default {
       return output;
     },
 
+    biggerOrEqual (date1: Date, date2: Date) {
+      return Number(date1) > Number(date2) || this.equalDay(date1, date2);
+    },
+
+    isValid(date?: Date): date is Date {
+      return !isNaN(Number(date));
+    },
+
+    equalDay(date1?: Date, date2?: Date) {
+      if (!this.isValid(date1) || !this.isValid(date2)) {
+        return false;
+      }
+
+      return date1.toDateString() === date2.toDateString();
+    },
+
     getWeekDays(dates: Date[] = [], events: EventDate[] = []): WeekDay[] {
       return dates.map((date: Date) => ({
         date,
         events: events.filter((event) => (
-          this.sameDay(event.date, date)) ||
+          this.equalDay(event.date, date)) ||
           event.wday === WEEK_DAYS[date.getDay()],
         ),
       }));
+    },
+
+    getMinAndMax(dates: Date[] = []) {
+      return [
+        new Date(Math.min(...dates.map(Number))),
+        new Date(Math.max(...dates.map(Number))),
+      ];
     },
 
     getDatesInRange(startDate: Date, endDate: Date = startDate) {
@@ -68,35 +84,37 @@ export default {
       return days;
     },
 
-    sameDay(date1?: Date, date2?: Date) {
-      if (!date1 || !date2) return false;
+    inRanges(date: Date, ranges: DateRange[]) {
+      if (!this.biggerOrEqual(date, new Date)) return false;
 
-      date1 = new Date(date1);
-      date2 = new Date(date2);
-
-      if (isNaN(Number(date1)) || isNaN(Number(date2))) {
-        return false;
+      if (!Array.isArray(ranges) && this.biggerOrEqual(date, new Date)) {
+        return true;
       }
 
-      return date1.toDateString() === date2.toDateString();
-    },
+      return ranges?.some((range) => {
+        const startIsValid = this.isValid(range.start);
+        const endIsValid = this.isValid(range.end);
+  
+        if (!startIsValid && this.biggerOrEqual(date, new Date)) {
+          return true;
+        }
 
-    dateIsInRange(date: Date, startRange?: Date, endRange?: Date) {
-      if (startRange && endRange) {
-        const start = new Date(startRange);
-        const end = new Date(endRange);
+        if (!endIsValid && this.biggerOrEqual(date, range.start)) {
+          return true;
+        }
 
+        if (!startIsValid && endIsValid) {
+          return false;
+        }
+
+        const start = new Date(range.start);
+        const end = new Date(range.end as Date);
+        
         start.setHours(0, 0, 0);
         end.setHours(23, 59, 59);
-
+        
         return Number(start) <= Number(date) && Number(date) <= Number(end);
-      }
-
-      if (Number(date) < Date.now() && !this.sameDay(date, new Date())) {
-        return false;
-      }
-
-      return true;
+      });
     },
   },
 };
