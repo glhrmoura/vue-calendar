@@ -19,6 +19,10 @@ $ yarn add @glhrm/vue-scheduler
 ## Usage
 
 ```html
+<template>
+  <VueScheduler :events="events" />
+</template>
+
 <script>
   import VueScheduler from '@glhrm/vue-scheduler';
 
@@ -47,10 +51,6 @@ $ yarn add @glhrm/vue-scheduler
     },
   };
 </script>
-
-<template>
-  <VueScheduler :events="events" />
-</template>
 ```
 
 ## Properties
