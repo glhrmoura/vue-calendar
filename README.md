@@ -38,7 +38,7 @@ $ yarn add @glhrm/vue-scheduler
           /**
            * 
            * Passing the {wday} property with the day of the week we 
-           * will have recurring events. 
+           * will have recurring event
            *
            **/
             wday: 'friday',
@@ -56,12 +56,12 @@ $ yarn add @glhrm/vue-scheduler
 
         ranges: [
           {
-            start: new Date('11/16/2022'),
-            end: new Date('12/02/2022'),
+            start: new Date(),
+            end: new Date(),
           },
           {
-            start: new Date('01/13/2023'),
-            end: new Date('01/19/2023'),
+            start: new Date(),
+            end: new Date(),
           },
           {
           /**
@@ -70,7 +70,7 @@ $ yarn add @glhrm/vue-scheduler
            * start on the given date and cover all subsequent dates
            *
            **/
-            start: new Date('04/19/2023'),
+            start: new Date(),
           },
         ],
       };
