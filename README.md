@@ -35,22 +35,20 @@ $ yarn add @glhrm/vue-scheduler
       return {
         events: [
           {
-          /**
-           * 
-           * Passing the {wday} property with the day of the week we 
-           * will have recurring event
-           *
-           **/
-            wday: 'friday',
-            interval: { from: '09:20', to: '12:45' },
+            all: true,
+            interval: { from: '05:00', to: '06:00' },
           },
           {
             date: new Date,
-            interval: { from: '08:10', to: '11:00' },
+            interval: { from: '06:00', to: '08:45' },
           },
           {
-            date: new Date,
-            interval: { from: '14:40', to: '17:45' },
+            wday: ['monday', 'wednesday', 'thursday', 'friday'],
+            interval: { from: '09:00', to: '11:00' },
+          },
+          {
+            wday: 'thursday',
+            interval: { from: '11:00', to: '12:00' },
           },
         ],
 
@@ -65,10 +63,8 @@ $ yarn add @glhrm/vue-scheduler
           },
           {
           /**
-           *  
            * Passing only the {start} property we will have a range that will 
            * start on the given date and cover all subsequent dates
-           *
            **/
             start: new Date,
           },
@@ -92,11 +88,12 @@ $ yarn add @glhrm/vue-scheduler
 
 #### Event
 
-| Property          |  Description                                                     |  Type                 |
-| ----------------- | ---------------------------------------------------------------- | --------------------- |
-| wday              | Used to define recurring events                                  | `String`              |
-| date              | Used to set events on fixed dates (Takes precedence over `wday`) | `Date`                |
-| interval          | An object that informs the start and end time of the event       | [Interval](#interval) |
+| Property          |  Description                                                                                        |  Type                 |
+| ----------------- | --------------------------------------------------------------------------------------------------- | --------------------- |
+| wday              | Used to define recurring events                                                                     | `String`              |
+| date              | Used to set events on fixed dates (Takes precedence over `wday`)                                    | `Date`                |
+| all               | Used to define that an event will happen every day. This property takes precedence over all others  | `Boolean`             |
+| interval          | An object that informs the start and end time of the event                                          | [Interval](#interval) |
 
 #### Range
 
