@@ -87,7 +87,7 @@ $ yarn add @glhrm/vue-scheduler
 | to              | Event end time       | `String` |
 
 
-### Events
+## Events
 
 | Name            | Description                                                     | Callback Arguments      |
 | --------------- | --------------------------------------------------------------- | ----------------------- |
