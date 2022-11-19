@@ -13,7 +13,7 @@ const WEEK_DAYS = [
 export default {
   methods: {
     contains(date: Date, dates: Date[]) {
-      return Boolean(dates.find((dateItem) => this.equalDay(date, dateItem)));
+      return Boolean(dates.find((dateItem) => this.equalDays(date, dateItem)));
     },
 
     split(array: Date[] = [], subLen: number): Array<Date[]> {
@@ -27,14 +27,14 @@ export default {
     },
 
     biggerOrEqual (date1: Date, date2: Date) {
-      return Number(date1) > Number(date2) || this.equalDay(date1, date2);
+      return Number(date1) > Number(date2) || this.equalDays(date1, date2);
     },
 
     isValid(date?: Date): date is Date {
       return !isNaN(Number(date));
     },
 
-    equalDay(date1?: Date, date2?: Date) {
+    equalDays(date1?: Date, date2?: Date) {
       if (!this.isValid(date1) || !this.isValid(date2)) {
         return false;
       }
@@ -42,12 +42,20 @@ export default {
       return date1.toDateString() === date2.toDateString();
     },
 
+    equalWeekDays(wday1: string | string[] | undefined, wday2: string) {
+      return wday1?.includes(wday2);
+    },
+
+    getWeekDayTitle(date: Date) {
+      return WEEK_DAYS[date.getDay()];
+    },
+
     getWeekDays(dates: Date[] = [], events: EventDate[] = []): WeekDay[] {
       return dates.map((date: Date) => ({
         date,
         events: events.filter((event) => (
-          this.equalDay(event.date, date)) ||
-          event.wday === WEEK_DAYS[date.getDay()],
+          this.equalDays(event.date, date)) ||
+          this.equalWeekDays(event.wday, this.getWeekDayTitle(date)),
         ),
       }));
     },
