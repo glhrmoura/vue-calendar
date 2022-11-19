@@ -1,6 +1,6 @@
 {
   "name": "@glhrm/vue-scheduler",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./lib/vue-scheduler.common.js",
   "types": "./lib/index.d.ts",
   "description": "A library to assist in scheduling appointments.",
