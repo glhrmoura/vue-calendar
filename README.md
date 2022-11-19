@@ -86,7 +86,7 @@ $ yarn add @glhrm/vue-scheduler
 | Property      | Description                                                | Type                | Default        |
 | ------------- | ---------------------------------------------------------- | ------------------- | -------------- |
 | events        | Events that will be shown on the scheduler                 | [Event[]](#event)   | `[]`           |
-| ranges        | A range of dates that will be highlighted in the scheduler | [Range[]](#range)   | `{}`           |
+| ranges        | A range of dates that will be highlighted in the scheduler | [Range[]](#range)   | `[]`           |
 | rows          | Number of lines that the scheduler will show               | `Number`            | `5`            |
 | controls      | Indicates whether action buttons will be shown             | `Boolean`           | `true`         |
 
