@@ -45,23 +45,23 @@ $ yarn add @glhrm/vue-scheduler
             interval: { from: '09:20', to: '12:45' },
           },
           {
-            date: new Date(),
+            date: new Date,
             interval: { from: '08:10', to: '11:00' },
           },
           {
-            date: new Date(),
+            date: new Date,
             interval: { from: '14:40', to: '17:45' },
           },
         ],
 
         ranges: [
           {
-            start: new Date(),
-            end: new Date(),
+            start: new Date,
+            end: new Date,
           },
           {
-            start: new Date(),
-            end: new Date(),
+            start: new Date,
+            end: new Date,
           },
           {
           /**
@@ -70,7 +70,7 @@ $ yarn add @glhrm/vue-scheduler
            * start on the given date and cover all subsequent dates
            *
            **/
-            start: new Date(),
+            start: new Date,
           },
         ],
       };
