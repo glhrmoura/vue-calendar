@@ -54,6 +54,7 @@ export default {
       return dates.map((date: Date) => ({
         date,
         events: events.filter((event) => (
+          event.all ||
           this.equalDays(event.date, date)) ||
           this.equalWeekDays(event.wday, this.getWeekDayTitle(date)),
         ),

@@ -14,7 +14,8 @@ export interface DateRange {
 
 export interface EventDate {
   date?: Date;
-  wday?: string;
+  all?: boolean;
+  wday?: string | string[];
   interval: TimeInterval;
 }
 

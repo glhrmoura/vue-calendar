@@ -23,6 +23,10 @@ export default defineComponent({
   data: () => ({
     events: [
       {
+        all: true,
+        interval: { from: '05:00', to: '06:00' },
+      },
+      {
         date: new Date('12/06/2022'),
         interval: { from: '06:00', to: '08:45' },
       },

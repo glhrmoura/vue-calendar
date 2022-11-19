@@ -26,7 +26,7 @@
     </div>
 
     <div
-      v-if="range && weekDay.events && weekDay.events.length"
+      v-if="weekDay.events && weekDay.events.length"
       class="vue-scheduler__week-day__schedules"
     >
       <Event
