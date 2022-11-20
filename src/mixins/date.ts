@@ -106,9 +106,11 @@ export default {
     },
 
     isInRanges(date: Date, ranges: DateRange[]) {
-      if (!this.isBiggerOrEqual(date, new Date)) return false;
+      const isBiggerOrEqualThenNow = this.isBiggerOrEqual(date, new Date);
 
-      if (!Array.isArray(ranges) && this.isBiggerOrEqual(date, new Date)) {
+      if (!isBiggerOrEqualThenNow) return false;
+
+      if (!Array.isArray(ranges) && isBiggerOrEqualThenNow) {
         return true;
       }
 
@@ -116,7 +118,7 @@ export default {
         const rangeStartIsValid = this.isValid(range.start);
         const rangeEndIsValid = this.isValid(range.end);
   
-        if (!rangeStartIsValid && this.isBiggerOrEqual(date, new Date)) {
+        if (!rangeStartIsValid && isBiggerOrEqualThenNow) {
           return true;
         }
 
