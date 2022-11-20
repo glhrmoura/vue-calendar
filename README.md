@@ -90,7 +90,7 @@ $ yarn add @glhrm/vue-scheduler
 
 | Property          |  Description                                                                                        |  Type                 |
 | ----------------- | --------------------------------------------------------------------------------------------------- | --------------------- |
-| wday              | Used to define recurring events                                                                     | `String | String[]`   |
+| wday              | Used to define recurring events                                                                     | `String or String[]`  |
 | date              | Used to set events on fixed dates (Takes precedence over `wday`)                                    | `Date`                |
 | all               | Used to define that an event will happen every day. This property takes precedence over all others  | `Boolean`             |
 | interval          | An object that informs the start and end time of the event                                          | [Interval](#interval) |
