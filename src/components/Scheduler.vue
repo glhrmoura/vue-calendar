@@ -11,8 +11,8 @@
     <table class="vue-scheduler__calendar-content">
       <thead>
         <tr class="vue-scheduler__week-days">
-          <WeekDayHeader v-for="weekday in weekDays" :key="weekday">
-            {{ weekday }}
+          <WeekDayHeader v-for="weekDay in weekDays" :key="weekDay">
+            {{ weekDay }}
           </WeekDayHeader>
         </tr>
       </thead>
@@ -23,7 +23,7 @@
             v-for="(weekDay, index) in getWeekDays(week, events)"
             :key="index"
             :weekDay="weekDay"
-            :range="inRanges(weekDay.date, ranges)"
+            :range="isInRanges(weekDay.date, ranges)"
             :selected="contains(weekDay.date, selectedDates)"
             @weekDayClick="onWeekDayClick"
             @weekDayMouseUp="onWeekDayMouseUp"
@@ -104,16 +104,10 @@ export default defineComponent({
   },
 
   mounted() {
-    const [range] = this.ranges || [];
-
-    this.schedulerStartDay = new Date(range?.start || Date.now());
+    this.schedulerStartDay = new Date;
   },
 
   watch: {
-    'range.start'(newValue) {
-      this.schedulerStartDay = new Date(newValue);
-    },
-
     offsetDays() {
       this.generateDays();
     },
