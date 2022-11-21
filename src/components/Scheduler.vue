@@ -133,7 +133,7 @@ export default defineComponent({
     },
 
     onWeekDayMouseEnter(data: WeekDayActionData) {
-      if (!this.inMutipleSelection || this.selectedRange.includes(data.date)) return;
+      if (!this.inMutipleSelection) return;
 
       let [minDate, maxDate] = this.getMinAndMax(this.selectedRange);
 
