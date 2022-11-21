@@ -20,7 +20,10 @@ $ yarn add @glhrm/vue-scheduler
 
 ```html
 <template>
-  <VueScheduler :events="events" />
+  <VueScheduler
+    :events="events"
+    :ranges="ranges"
+  />
 </template>
 
 <script>
