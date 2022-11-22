@@ -16,17 +16,17 @@
         'vue-scheduler__week-day__content--highlight': isToday || isFirstDay
       }"
     >
-      <span v-if="isToday">
-        {{ monthLabel }} {{ weekDayLabel }} {{ monthDayNumber }} (Today)
-      </span>
-
-      <span v-else>
+      <span>
         {{ monthLabel }}
-
-        {{ monthDayNumber }}
 
         <span class="week-day__weekday-label">
           {{ weekDayLabel }}
+        </span>
+
+        {{ monthDayNumber }}
+        
+        <span v-if="isToday">
+          (Today)
         </span>
       </span>
     </div>
