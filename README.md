@@ -115,10 +115,10 @@ $ yarn add @glhrm/vue-scheduler
 
 ## Events
 
-| Name            | Description                                                     | Callback Arguments      |
-| --------------- | --------------------------------------------------------------- | ----------------------- |
-| select-date     | When only one date is selected with a simple click              | `{ date: Date   }`      |
-| select-dates    | When multiple dates are selected by clicking and dragging       | `{ dates: Date[] }`     |
+| Name            | Description                                                     | Callback Arguments                       |
+| --------------- | --------------------------------------------------------------- | ---------------------------------------- |
+| select-date     | When only one date is selected with a simple click              | `{ date: Date, events: Event[]   }`      |
+| select-dates    | When multiple dates are selected by clicking and dragging       | `{ dates: Date[] }`                      |
 
 
 ## License

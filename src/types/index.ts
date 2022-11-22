@@ -26,6 +26,7 @@ export interface WeekDay {
 
 export interface WeekDayActionData {
   date: Date;
+  events: Event[];
 }
 
 export interface SchedulerData {

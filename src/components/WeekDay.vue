@@ -36,7 +36,7 @@
       class="vue-scheduler__week-day__schedules"
     >
       <Event
-        v-for="(event, index) in weekDay.events.slice(0, 3)"
+        v-for="(event, index) in allEvents.slice(0, 3)"
         :key="index"
         :event="event"
       />
@@ -107,35 +107,57 @@ export default defineComponent({
 
   methods: {
     onClick() {
-      this.$emit('week-day-click', { date: this.weekDay.date });
+      this.$emit('week-day-click', {
+        date: this.weekDay.date,
+        events: this.allEvents,
+      });
     },
 
     onMouseUp() {
-      this.$emit('week-day-mouse-up', { date: this.weekDay.date });
+      this.$emit('week-day-mouse-up', {
+        date: this.weekDay.date,
+        events: this.allEvents,
+      });
     },
 
     onMouseDown() {
-      this.$emit('week-day-mouse-down', { date: this.weekDay.date });
+      this.$emit('week-day-mouse-down', {
+        date: this.weekDay.date,
+        events: this.allEvents,
+      });
     },
 
     onMouseEnter() {
-      this.$emit('week-day-mouse-enter', { date: this.weekDay.date });
+      this.$emit('week-day-mouse-enter', {
+        date: this.weekDay.date,
+        events: this.allEvents,
+      });
     },
   },
 
   computed: {
     isToday() {
-      const currDate = new Date();
+      const currentDate = new Date();
 
       return (
-        this.weekDay.date.getDate() === currDate.getDate()
-        && this.weekDay.date.getMonth() === currDate.getMonth()
-        && this.weekDay.date.getFullYear() === currDate.getFullYear()
+        this.weekDay.date.getDate() === currentDate.getDate()
+        && this.weekDay.date.getMonth() === currentDate.getMonth()
+        && this.weekDay.date.getFullYear() === currentDate.getFullYear()
      );
     },
 
-    hasSeveralEvents() {
-      return this.weekDay?.events?.length > 3;
+    allEvents() {
+      const events = this.weekDay?.events || [];
+      
+      try {
+        return JSON.parse(JSON.stringify(events));
+      } catch (error) {
+        return [];
+      }
+    },
+
+    hasSeveralEvents () {
+      return this.allEvents.length > 3;
     },
 
     isFirstDay() {
