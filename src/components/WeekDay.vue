@@ -11,17 +11,23 @@
     }"
   >
     <div
-      class="vue-scheduler__week-day__info"
+      class="vue-scheduler__week-day__content"
       :class="{
-        'vue-scheduler__week-day__info--highlight': isToday || firstDayMonth
+        'vue-scheduler__week-day__content--highlight': isToday || isFirstDay
       }"
     >
       <span v-if="isToday">
-        {{ stringMonth }} {{ stringWeekDay }} {{ monthDay }} (Today)
+        {{ monthLabel }} {{ weekDayLabel }} {{ monthDayNumber }} (Today)
       </span>
 
       <span v-else>
-        {{ stringMonth }} {{ monthDay }}
+        {{ monthLabel }}
+
+        {{ monthDayNumber }}
+
+        <span class="week-day__weekday-label">
+          {{ weekDayLabel }}
+        </span>
       </span>
     </div>
 
@@ -125,19 +131,19 @@ export default defineComponent({
      );
     },
 
-    firstDayMonth() {
-      return this.monthDay === 1;
+    isFirstDay() {
+      return this.monthDayNumber === 1;
     },
 
-    monthDay() {
+    monthDayNumber() {
       return this.weekDay.date.getDate();
     },
 
-    stringMonth() {
+    monthLabel() {
       return this.months[this.weekDay.date.getMonth()];
     },
 
-    stringWeekDay() {
+    weekDayLabel() {
       return this.weekDays[this.weekDay.date.getDay()];
     },
   },
@@ -174,12 +180,12 @@ export default defineComponent({
   }
 }
 
-.vue-scheduler__week-day__info {
+.vue-scheduler__week-day__content {
   text-align: center;
   text-transform: uppercase;
 }
 
-.vue-scheduler__week-day__info--highlight {
+.vue-scheduler__week-day__content--highlight {
   font-weight: 800;
 }
 
@@ -188,5 +194,11 @@ export default defineComponent({
   flex-direction: column;
   margin-top: 12px;
   row-gap: 6px;
+}
+
+.week-day__weekday-label {
+  @media (min-width: 769px) {
+    display: none;
+  }
 }
 </style>

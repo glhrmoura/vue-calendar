@@ -241,5 +241,9 @@ export default defineComponent({
   border-radius: 2px 2px 0px 0px;
   box-shadow: 0px 0px 0px 1px #cfcaca;
   grid-template-columns: repeat(7, minmax(100px, 1fr));
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 </style>
