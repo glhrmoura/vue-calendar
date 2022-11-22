@@ -1,5 +1,8 @@
 <p align="center">
-  <img style="object: contain; height: 150px" alt="RapidAPI" src="https://raw.githubusercontent.com/glhrmoura/vue-scheduler/main/static/logo.png">
+  <img
+    style="object: contain; height: 150px"
+    src="https://raw.githubusercontent.com/glhrmoura/vue-scheduler/main/static/logo.png"
+  />
 </p>
 
 # 📅 Vue Scheduler
