@@ -36,11 +36,14 @@
       class="vue-scheduler__week-day__schedules"
     >
       <Event
-        v-for="(event, index) in weekDay.events"
+        v-for="(event, index) in weekDay.events.slice(0, 3)"
         :key="index"
         :event="event"
-        class="vue-scheduler__week-day__event"
       />
+    </div>
+
+    <div class="week-day__more-events" v-if="weekDay.events.length > 3">
+      ...
     </div>
   </td>
 </template>
@@ -160,7 +163,7 @@ export default defineComponent({
   background-color: #f6f6f6;
   box-shadow: 0px 0px 0px 1px #cfcaca;
   box-sizing: border-box;
-  max-height: 150px;
+  min-height: 150px;
 
   &.vue-scheduler__week-day--in-range {
     background-color: #fff;
@@ -200,5 +203,13 @@ export default defineComponent({
   @media (min-width: 769px) {
     display: none;
   }
+}
+
+.week-day__more-events {
+  display: flex;
+  justify-content: center;
+  line-height: 20px;
+  color: #a8a8a8;
+  font-size: 24px;
 }
 </style>
