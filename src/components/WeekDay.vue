@@ -42,7 +42,7 @@
       />
     </div>
 
-    <div class="week-day__more-events" v-if="weekDay.events.length > 3">
+    <div class="week-day__more-events" v-if="hasSeveralEvents">
       ...
     </div>
   </td>
@@ -132,6 +132,10 @@ export default defineComponent({
         && this.weekDay.date.getMonth() === currDate.getMonth()
         && this.weekDay.date.getFullYear() === currDate.getFullYear()
      );
+    },
+
+    hasSeveralEvents() {
+      return this.weekDay?.events?.length > 3;
     },
 
     isFirstDay() {
