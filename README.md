@@ -4,6 +4,8 @@
 
 # 📅 Vue Scheduler
 
+[![npm version](https://img.shields.io/npm/v/vue-scheduler.svg)](https://www.npmjs.com/package/@glhrm/vue-scheduler)
+
 A library to assist in scheduling appointments
 
 ## Install
