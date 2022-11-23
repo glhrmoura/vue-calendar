@@ -7,7 +7,8 @@
 
 # 📅 Vue Scheduler
 
-[![npm version](https://img.shields.io/npm/v/vue-scheduler.svg)](https://www.npmjs.com/package/@glhrm/vue-scheduler)
+[![npm version](https://img.shields.io/npm/v/@glhrm/vue-scheduler.svg?style=flat-square)](https://www.npmjs.com/package/@glhrm/vue-scheduler)
+[![license](https://img.shields.io/npm/l/@glhrm/vue-scheduler.svg?style=flat-square)](http://badge.fury.io/js/@glhrm/vue-scheduler)
 
 A library to assist in scheduling appointments
 
