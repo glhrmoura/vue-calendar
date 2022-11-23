@@ -55,7 +55,7 @@ export default {
     getWeekDays(dates: Date[] = [], events: EventDate[] = []): WeekDay[] {
       return dates.map((date: Date) => ({
         date,
-        events: events.filter((event) => (
+        events: events?.filter((event) => (
           event.all ||
           this.isEqual(event.date, date)) ||
           this.isEqualWeeDay(event.wday, this.getWeekDayTitle(date)),
