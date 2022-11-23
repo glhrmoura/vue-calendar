@@ -1,5 +1,5 @@
 <template>
-  <Scheduler
+  <VueScheduler
     :events="events"
     :ranges="ranges"
     @selectDate="onSelectDate"
@@ -10,14 +10,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import Scheduler from '@/index';
+import VueScheduler from '@/index';
 import type { WeekDayActionData } from '@/types';
 
 export default defineComponent({
   name: 'App',
 
   components: {
-    Scheduler,
+    VueScheduler,
   },
 
   data: () => ({
