@@ -28,6 +28,9 @@
     "build:npm:clean": "rm ./lib/demo.html && rm ./lib/vue-scheduler.umd.js && rm ./lib/vue-scheduler.umd.min.js"
   },
   "dependencies": {},
+  "peerDependencies": {
+    "vue": "^3.2.13"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
