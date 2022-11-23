@@ -110,7 +110,7 @@ export default {
 
       if (!isBiggerOrEqualThenNow) return false;
 
-      if (!Array.isArray(ranges) && isBiggerOrEqualThenNow) {
+      if ((!Array.isArray(ranges) || !ranges.length) && isBiggerOrEqualThenNow) {
         return true;
       }
 
