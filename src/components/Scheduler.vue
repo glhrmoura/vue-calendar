@@ -228,6 +228,7 @@ export default defineComponent({
 .vue-scheduler {
   width: 100%;
   user-select: none;
+  font-family: sans-serif;
 }
 
 .vue-scheduler__calendar-content {
@@ -237,9 +238,9 @@ export default defineComponent({
 
 .vue-scheduler__week-days {
   display: grid;
-  background-color: #f6f6f6;
+  background-color: #FFFFFF;
   border-radius: 2px 2px 0px 0px;
-  box-shadow: 0px 0px 0px 1px #cfcaca;
+  box-shadow: 0px 0px 0px 1px #D5D4DF;
   grid-template-columns: repeat(7, minmax(100px, 1fr));
 
   @media (max-width: 768px) {
