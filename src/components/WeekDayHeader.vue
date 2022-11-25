@@ -25,9 +25,9 @@ export default defineComponent({
 .week-day-header {
   flex-grow: 1;
   text-align: center;
-  color: #a8a8a8;
+  color: #000000;
   font-size: 14px;
-  padding: 4px;
+  padding: 6px;
   font-weight: normal;
 }
 </style>

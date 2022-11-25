@@ -4,16 +4,16 @@
     @mouseup="onMouseUp"
     @mouseenter="onMouseEnter"
     @mousedown="onMouseDown"
-    class="vue-scheduler__week-day"
+    class="week-day"
     :class="{
-      'vue-scheduler__week-day--in-range': range,
-      'vue-scheduler__week-day--selected': selected,
+      'week-day--in-range': range,
+      'week-day--selected': selected,
     }"
   >
     <div
-      class="vue-scheduler__week-day__content"
+      class="week-day__content"
       :class="{
-        'vue-scheduler__week-day__content--highlight': isToday || isFirstDay
+        'week-day__content--highlight': isToday || isFirstDay
       }"
     >
       <span>
@@ -33,7 +33,7 @@
 
     <div
       v-if="weekDay.events && weekDay.events.length"
-      class="vue-scheduler__week-day__schedules"
+      class="week-day__schedules"
     >
       <Event
         v-for="(event, index) in allEvents.slice(0, 3)"
@@ -180,19 +180,20 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.vue-scheduler__week-day {
+.week-day {
   position: relative;
   padding: 8px;
-  color: #a8a8a8;
+  color: #A8A8A8;
   font-size: 11px;
   cursor: pointer;
-  background-color: #f6f6f6;
-  box-shadow: 0px 0px 0px 1px #cfcaca;
+  background-color: #F2F3F7;
+  box-shadow: 0px 0px 0px 1px #D5D4DF;
   box-sizing: border-box;
   min-height: 150px;
 
-  &.vue-scheduler__week-day--in-range {
+  &.week-day--in-range {
     background-color: #fff;
+    color: #000000;
   }
 
   @media (min-width: 769px) {
@@ -201,7 +202,7 @@ export default defineComponent({
       box-shadow: 0px 0px 0px 1px #6382C6;
     }
 
-    &.vue-scheduler__week-day--selected {
+    &.week-day--selected {
       background-color: #f2f6ff;
       box-shadow: 0px 0px 0px 1px #6382C6;
       z-index: 10;
@@ -209,16 +210,20 @@ export default defineComponent({
   }
 }
 
-.vue-scheduler__week-day__content {
+.week-day__content {
   text-align: center;
   text-transform: uppercase;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.vue-scheduler__week-day__content--highlight {
+.week-day__content--highlight {
   font-weight: 800;
 }
 
-.vue-scheduler__week-day__schedules {
+.week-day__schedules {
   display: flex;
   flex-direction: column;
   margin-top: 12px;
