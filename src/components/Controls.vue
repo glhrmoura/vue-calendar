@@ -1,6 +1,6 @@
 <template>
-  <div class="vue-scheduler-controls">
-    <div class="vue-scheduler-controls__content">
+  <div class="controls-container">
+    <div class="controls-content">
       <Button
         v-if="!todayInPage"
         type="link"
@@ -55,13 +55,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.vue-scheduler-controls {
+.controls-container {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 8px;
 }
 
-.vue-scheduler-controls__content {
+.controls-content {
   display: flex;
   align-items: center;
   column-gap: 12px;
