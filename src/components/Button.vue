@@ -1,16 +1,16 @@
 <template>
   <div
     :class="{
-      'vue-scheduler__button-container': true,
-      'vue-scheduler__button-container--arrow-left': arrowOnLeft,
+      'vue-scheduler-button-container': true,
+      'vue-scheduler-button-container--arrow-left': arrowOnLeft,
     }"
   >
     <button
       v-if="label"
       :class="{
-        'vue-scheduler__button': true,
-        'vue-scheduler__button--link': typeIs('link'),
-        'vue-scheduler__button--arrow': typeIs('arrow'),
+        'vue-scheduler-button': true,
+        'vue-scheduler-button--link': typeIs('link'),
+        'vue-scheduler-button--arrow': typeIs('arrow'),
       }"
     >
       {{ label }}
@@ -61,7 +61,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.vue-scheduler__button-container {
+.vue-scheduler-button-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,12 +71,12 @@ export default defineComponent({
     flex-direction: row-reverse;
   }
 
-  &, .vue-scheduler__button {
+  &, .vue-scheduler-button {
     cursor: pointer;
   }
 }
 
-.vue-scheduler__button {
+.vue-scheduler-button {
   background-color: transparent;
   border: none;
   outline: none;
