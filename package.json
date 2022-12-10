@@ -1,9 +1,9 @@
 {
   "name": "@glhrm/vue-scheduler",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "main": "./lib/vue-scheduler.common.js",
   "types": "./lib/index.d.ts",
-  "description": "A library to assist in scheduling appointments.",
+  "description": "A library to assist in scheduling appointments for Vue 3.",
   "author": "Guilherme Moura <mouraggui@gmail.com>",
   "private": false,
   "license": "MIT",
