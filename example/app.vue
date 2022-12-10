@@ -1,10 +1,16 @@
 <template>
-  <VueScheduler
-    :events="events"
-    :ranges="ranges"
-    @selectDate="onSelectDate"
-    @selectDates="onSelectDates"
-  />
+  <div class="app">
+    <h1 class="app-title">
+      Vue Scheduler
+    </h1>
+
+    <VueScheduler
+      :events="events"
+      :ranges="ranges"
+      @selectDate="onSelectDate"
+      @selectDates="onSelectDates"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -27,7 +33,7 @@ export default defineComponent({
         interval: { from: '05:00', to: '06:00' },
       },
       {
-        date: new Date('12/06/2022'),
+        date: new Date(),
         interval: { from: '06:00', to: '08:45' },
       },
       {
@@ -50,27 +56,44 @@ export default defineComponent({
 
     ranges: [
       {
-        start: new Date('11/16/2022'),
-        end: new Date('12/02/2022'),
+        start: new Date(),
+        end: new Date(Date.now() + (86400000 * 6)),
       },
       {
-        start: new Date('01/13/2023'),
-        end: new Date('01/19/2023'),
+        start: new Date(Date.now() + (86400000 * 40)),
+        end: new Date(Date.now() + (86400000 * 51)),
       },
       {
-        start: new Date('04/19/2023'),
+        start: new Date(Date.now() + (86400000 * 75)),
       },
     ],
   }),
 
   methods: {
     onSelectDate(data: WeekDayActionData) {
-      console.log('selectDate: ', data);
+      alert(JSON.stringify(data, null, 4));
     },
 
     onSelectDates(data: WeekDayActionData) {
-      console.log('selectDates: ', data);
+      alert(JSON.stringify(data, null, 4));
     },
   },
 });
 </script>
+
+<style>
+body {
+  font-family: sans-serif;
+}
+
+.app {
+  max-width: 910px;
+  margin: 94px auto;
+}
+
+.app-title {
+  margin: 0px;
+  margin-bottom: 64px;
+  text-align: center; 
+}
+</style>
