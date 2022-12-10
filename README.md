@@ -12,12 +12,16 @@
 
 A library to assist in scheduling appointments for Vue 3.
 
+## Demo
+
+[Vue Scheduler](https://peppy-kringle-3eba76.netlify.app)
+
 ## Install
 
 ```bash
 $ npm install @glhrm/vue-scheduler --save
 
-or 
+or
 
 $ yarn add @glhrm/vue-scheduler
 ```
