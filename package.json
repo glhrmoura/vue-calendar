@@ -22,7 +22,6 @@
     "build:npm:ts-d": "tsc src/types/index.ts --declaration --emitDeclarationOnly --outDir lib",
     "build:npm:clean": "rm ./lib/demo.html && rm ./lib/vue-scheduler.umd.js && rm ./lib/vue-scheduler.umd.min.js"
   },
-  "dependencies": {},
   "peerDependencies": {
     "vue": "^3.0.0"
   },
@@ -34,13 +33,14 @@
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
+    "core-js": "^3.8.3",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "typescript": "~4.5.5",
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "vue3-highlightjs": "^1.0.5"
   },
   "files": [
     "lib/*"
