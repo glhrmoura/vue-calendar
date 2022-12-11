@@ -104,14 +104,6 @@
                   wday: 'thursday',
                   interval: { from: '11:00', to: '12:00' },
                 },
-                {
-                  wday: 'thursday',
-                  interval: { from: '14:00', to: '17:00' },
-                },
-                {
-                  wday: 'thursday',
-                  interval: { from: '18:00', to: '19:00' },
-                },
               ],
           
               ranges: [
