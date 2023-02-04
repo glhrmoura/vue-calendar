@@ -5,7 +5,7 @@
   />
 </p>
 
-# 📅 Vue Scheduler
+# Vue Scheduler
 
 [![npm version](https://img.shields.io/npm/v/@glhrm/vue-scheduler.svg?style=flat-square)](https://www.npmjs.com/package/@glhrm/vue-scheduler)
 [![license](https://img.shields.io/npm/l/@glhrm/vue-scheduler.svg?style=flat-square)](https://github.com/glhrmoura/vue-scheduler/blob/main/LICENSE)
