@@ -10,7 +10,7 @@
 [![npm version](https://img.shields.io/npm/v/@glhrm/vue-scheduler.svg?style=flat-square)](https://www.npmjs.com/package/@glhrm/vue-scheduler)
 [![license](https://img.shields.io/npm/l/@glhrm/vue-scheduler.svg?style=flat-square)](https://github.com/glhrmoura/vue-scheduler/blob/main/LICENSE)
 
-Library to assist in scheduling appointments for Vue 3.
+Vue Scheduler is a library for Vue 3 that provides a complete and easy-to-use solution for managing schedules and appointments. With it, you can define schedules quickly and intuitively, making the scheduling process much more efficient.
 
 ## Demo
 
