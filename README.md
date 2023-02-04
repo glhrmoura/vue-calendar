@@ -14,7 +14,7 @@ Library to assist in scheduling appointments for Vue 3.
 
 ## Demo
 
-[Vue Scheduler](https://peppy-kringle-3eba76.netlify.app)
+[**Vue Scheduler**](https://peppy-kringle-3eba76.netlify.app)
 
 ## Install
 
