@@ -5,18 +5,18 @@
   />
 </p>
 
-# Vue Scheduler
+## Vue Scheduler
 
 [![npm version](https://img.shields.io/npm/v/@glhrm/vue-scheduler.svg?style=flat-square)](https://www.npmjs.com/package/@glhrm/vue-scheduler)
 [![license](https://img.shields.io/npm/l/@glhrm/vue-scheduler.svg?style=flat-square)](https://github.com/glhrmoura/vue-scheduler/blob/main/LICENSE)
 
 Vue Scheduler is a library for Vue 3 that provides a complete and easy-to-use solution for managing schedules and appointments. With it, you can define schedules quickly and intuitively, making the scheduling process much more efficient.
 
-## Demo
+### Demo
 
 [**Vue Scheduler**](https://peppy-kringle-3eba76.netlify.app)
 
-## Install
+### Install
 
 ```bash
 $ npm install @glhrm/vue-scheduler --save
@@ -26,7 +26,7 @@ or
 $ yarn add @glhrm/vue-scheduler
 ```
 
-## Usage
+### Usage
 
 ```html
 <template>
@@ -88,7 +88,7 @@ $ yarn add @glhrm/vue-scheduler
 </script>
 ```
 
-## Properties
+### Properties
 
 #### Scheduler
 
@@ -123,7 +123,7 @@ $ yarn add @glhrm/vue-scheduler
 | to              | Event end time       | `String` |
 
 
-## Events
+### Events
 
 | Name            | Description                                                     | Callback Arguments                       |
 | --------------- | --------------------------------------------------------------- | ---------------------------------------- |
@@ -131,7 +131,7 @@ $ yarn add @glhrm/vue-scheduler
 | select-dates    | When multiple dates are selected by clicking and dragging       | `{ dates: Date[] }`                      |
 
 
-## License
+### License
 
 [MIT](https://github.com/glhrmoura/vue-scheduler/blob/main/LICENSE)
 
