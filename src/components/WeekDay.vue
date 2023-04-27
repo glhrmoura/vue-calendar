@@ -18,12 +18,12 @@
     >
       <span>
         {{ monthLabel }}
-
+        
         <span class="week-day__weekday-label">
           {{ weekDayLabel }}
         </span>
 
-        {{ monthDayNumber }}
+        {{ monthDayNumber }}<span v-if="isAnotherYear">, {{ weekDayYear }}</span>
         
         <span v-if="isToday">
           (Today)
@@ -51,9 +51,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import type { WeekDay } from '@/types';
-
 import dateMixin from '@/mixins/date';
+
+import type { WeekDay } from '@/types';
 
 import Event from '@/components/Event.vue';
 
@@ -175,6 +175,14 @@ export default defineComponent({
     weekDayLabel() {
       return this.weekDays[this.weekDay.date.getDay()];
     },
+
+    weekDayYear() {
+      return this.weekDay.date.getFullYear();
+    },
+
+    isAnotherYear() {
+      return this.weekDayYear !== new Date().getFullYear();
+    },
   },
 });
 </script>
@@ -184,7 +192,7 @@ export default defineComponent({
   position: relative;
   padding: 8px;
   color: #A8A8A8;
-  font-size: 11px;
+  font-size: 10px;
   cursor: pointer;
   background-color: #F2F3F7;
   box-shadow: 0px 0px 0px 1px #D5D4DF;

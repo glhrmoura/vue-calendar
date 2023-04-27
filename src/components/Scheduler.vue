@@ -45,8 +45,8 @@ import type { SchedulerData, EventDate, DateRange, WeekDayActionData } from '@/t
 
 import Week from '@/components/Week.vue';
 import WeekDay from '@/components/WeekDay.vue';
-import WeekDayHeader from '@/components/WeekDayHeader.vue';
 import Controls from '@/components/Controls.vue';
+import WeekDayHeader from '@/components/WeekDayHeader.vue';
 
 export default defineComponent({
   name: 'Scheduler',
