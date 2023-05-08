@@ -1,6 +1,6 @@
 {
   "name": "@glhrm/vue-calendar",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "./dist/vue-calendar.common.js",
   "types": "./dist/index.d.ts",
   "description": "Library designed to facilitate the creation of interactive calendars in applications using Vue >=3.",
