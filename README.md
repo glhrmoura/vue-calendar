@@ -14,7 +14,7 @@ Library designed to facilitate the creation of interactive calendars in applicat
 
 ### Demo
 
-[**Vue Calendar**](https://peppy-kringle-3eba76.netlify.app)
+[**Vue Calendar**](https://aesthetic-swan-63c802.netlify.app)
 
 ### Install
 
