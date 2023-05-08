@@ -20,9 +20,11 @@ Library designed to facilitate the creation of interactive calendars in applicat
 
 ```bash
 $ npm install @glhrm/vue-calendar --save
+```
 
 or
 
+```bash
 $ yarn add @glhrm/vue-calendar
 ```
 
