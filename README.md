@@ -10,7 +10,7 @@
 [![npm version](https://img.shields.io/npm/v/@glhrm/vue-calendar.svg?style=flat-square)](https://www.npmjs.com/package/@glhrm/vue-calendar)
 [![license](https://img.shields.io/npm/l/@glhrm/vue-calendar.svg?style=flat-square)](https://github.com/glhrmoura/vue-calendar/blob/main/LICENSE)
 
-The Vue Calendar library is a set of Vue 3 components designed to make it easy to create interactive calendars in Vue applications.
+Library designed to facilitate the creation of interactive calendars in applications using Vue >=3
 
 ### Demo
 
