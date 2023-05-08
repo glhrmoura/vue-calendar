@@ -1,11 +1,11 @@
 import type { App, Plugin } from 'vue';
 
-import VueScheduler from '@/components/Scheduler.vue';
+import VueCalendar from '@/components/Calendar.vue';
 
-export const VueSchedulerPlugin = {
+export const VueCalendarPlugin = {
   install(Vue: App) {
-    Vue.component('VueScheduler', VueScheduler);
+    Vue.component('VueCalendar', VueCalendar);
   },
 } as Plugin;
 
-export default VueScheduler;
+export default VueCalendar;

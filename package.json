@@ -1,9 +1,9 @@
 {
-  "name": "@glhrm/vue-scheduler",
-  "version": "1.3.2",
-  "main": "./dist/vue-scheduler.common.js",
+  "name": "@glhrm/vue-calendar",
+  "version": "0.1.0",
+  "main": "./dist/vue-calendar.common.js",
   "types": "./dist/index.d.ts",
-  "description": "A library to assist in scheduling appointments for Vue 3.",
+  "description": "Library designed to facilitate the creation of interactive calendars in applications using Vue >=3.",
   "author": "Guilherme Moura <mouraggui@gmail.com>",
   "license": "MIT",
   "private": false,
@@ -13,18 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/glhrmoura/vue-scheduler"
+    "url": "https://github.com/glhrmoura/vue-calendar"
   },
   "bugs": {
-    "url": "https://github.com/glhrmoura/vue-scheduler/issues"
+    "url": "https://github.com/glhrmoura/vue-calendar/issues"
   },
   "scripts": {
     "lint": "vue-cli-service lint",
     "serve": "vue-cli-service serve demo/main.ts",
     "build": "vue-cli-service build demo/main.ts --dest dist",
-    "build:npm": "vue-cli-service build --target lib --name vue-scheduler src/index.ts && yarn build:npm:clean && yarn build:npm:ts-d",
+    "build:npm": "vue-cli-service build --target lib --name vue-calendar src/index.ts && yarn build:npm:clean && yarn build:npm:ts-d",
     "build:npm:ts-d": "tsc src/types/index.ts --declaration --emitDeclarationOnly --outDir dist",
-    "build:npm:clean": "rm ./dist/demo.html && rm ./dist/vue-scheduler.umd.js && rm ./dist/vue-scheduler.umd.min.js"
+    "build:npm:clean": "rm ./dist/demo.html && rm ./dist/vue-calendar.umd.js && rm ./dist/vue-calendar.umd.min.js"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
@@ -53,7 +53,6 @@
     "Vue",
     "VueJS",
     "Vue3",
-    "Scheduler",
     "Calendar",
     "Components",
     "Plugin",

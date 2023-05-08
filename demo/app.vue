@@ -2,7 +2,7 @@
   <div class="app-demo">
     <header class="app-demo__header">
       <h1 class="app-demo__title">
-        Vue Scheduler
+        Vue Calendar
       </h1>
 
       <div class="app-demo__header-links">
@@ -10,7 +10,7 @@
           title="Github"
           target="_blank"
           class="header-link"
-          href="https://github.com/glhrmoura/vue-scheduler"
+          href="https://github.com/glhrmoura/vue-calendar"
         >
           <GithubIcon />
         </a>
@@ -19,7 +19,7 @@
           title="NPM"
           target="_blank"
           class="header-link"
-          href="https://www.npmjs.com/package/@glhrm/vue-scheduler"
+          href="https://www.npmjs.com/package/@glhrm/vue-calendar"
         >
           <NPMIcon />
         </a>
@@ -31,7 +31,7 @@
         Example 1
       </h2>
 
-      <VueScheduler
+      <VueCalendar
         :rows="rowsNumber"
         :events="data1.events"
         :ranges="data1.ranges"
@@ -39,44 +39,44 @@
         @selectDates="onSelectDates"
       />
 
-      <pre v-highlightjs>
-        <code class="html">
-          &lt;template&gt;
-            &lt;VueScheduler
-              :events="events"
-              :ranges="ranges"
-            /&gt;
-          &lt;/template&gt;
+<pre v-highlightjs>
+  <code class="html">
+    &lt;template&gt;
+      &lt;VueCalendar
+        :events="events"
+        :ranges="ranges"
+      /&gt;
+    &lt;/template&gt;
 
-          &lt;script&gt;
-            data: () =&gt; ({
-              events: [
-                {
-                  all: true,
-                  interval: { from: '05:00', to: '06:00' },
-                },
-                {
-                  date: new Date(),
-                  interval: { from: '06:00', to: '08:45' },
-                },
-              ],
-          
-              ranges: [
-                {
-                  start: new Date(),
-                  end: new Date(Date.now() + (DAY_MILLISECONDS * 8)),
-                },
-              ],
-            })
-          &lt;/script&gt;
-        </code>
-      </pre>
+    &lt;script&gt;
+      data: () =&gt; ({
+        events: [
+          {
+            all: true,
+            interval: { from: '05:00', to: '06:00' },
+          },
+          {
+            date: new Date(),
+            interval: { from: '06:00', to: '08:45' },
+          },
+        ],
+    
+        ranges: [
+          {
+            start: new Date(),
+            end: new Date(Date.now() + (DAY_MILLISECONDS * 8)),
+          },
+        ],
+      })
+    &lt;/script&gt;
+  </code>
+</pre>
 
       <h2>
         Example 2
       </h2>
 
-      <VueScheduler
+      <VueCalendar
         :rows="rowsNumber"
         :events="data2.events"
         :ranges="data2.ranges"
@@ -84,47 +84,47 @@
         @selectDates="onSelectDates"
       />
 
-      <pre v-highlightjs>
-        <code class="html">
-          &lt;template&gt;
-            &lt;VueScheduler
-              :events="events"
-              :ranges="ranges"
-            /&gt;
-          &lt;/template&gt;
+<pre v-highlightjs>
+  <code class="html">
+    &lt;template&gt;
+      &lt;VueCalendar
+        :events="events"
+        :ranges="ranges"
+      /&gt;
+    &lt;/template&gt;
 
-          &lt;script&gt;
-            data: () =&gt; ({
-              events: [
-                {
-                  wday: ['monday', 'wednesday', 'thursday', 'friday'],
-                  interval: { from: '09:00', to: '11:00' },
-                },
-                {
-                  wday: 'thursday',
-                  interval: { from: '11:00', to: '12:00' },
-                },
-              ],
-          
-              ranges: [
-                {
-                  start: new Date(Date.now() + (DAY_MILLISECONDS * 40)),
-                  end: new Date(Date.now() + (DAY_MILLISECONDS * 51)),
-                },
-                {
-                  start: new Date(Date.now() + (DAY_MILLISECONDS * 75)),
-                },
-              ],
-            })
-          &lt;/script&gt;
-        </code>
-      </pre>
+    &lt;script&gt;
+      data: () =&gt; ({
+        events: [
+          {
+            wday: ['monday', 'wednesday', 'thursday', 'friday'],
+            interval: { from: '09:00', to: '11:00' },
+          },
+          {
+            wday: 'thursday',
+            interval: { from: '11:00', to: '12:00' },
+          },
+        ],
+    
+        ranges: [
+          {
+            start: new Date(Date.now() + (DAY_MILLISECONDS * 40)),
+            end: new Date(Date.now() + (DAY_MILLISECONDS * 51)),
+          },
+          {
+            start: new Date(Date.now() + (DAY_MILLISECONDS * 75)),
+          },
+        ],
+      })
+    &lt;/script&gt;
+  </code>
+</pre>
 
       <h2>
         Example 3
       </h2>
 
-      <VueScheduler
+      <VueCalendar
         :rows="rowsNumber"
         :events="data3.events"
         :ranges="data3.ranges"
@@ -132,33 +132,33 @@
         @selectDates="onSelectDates"
       />
 
-      <pre v-highlightjs>
-        <code class="html">
-          &lt;template&gt;
-            &lt;VueScheduler
-              :events="events"
-              :ranges="ranges"
-            /&gt;
-          &lt;/template&gt;
+<pre v-highlightjs>
+  <code class="html">
+    &lt;template&gt;
+      &lt;VueCalendar
+        :events="events"
+        :ranges="ranges"
+      /&gt;
+    &lt;/template&gt;
 
-          &lt;script&gt;
-            data: () =&gt; ({
-              events: [
-                {
-                  wday: 'thursday',
-                  interval: { from: '14:00', to: '17:00' },
-                },
-                {
-                  wday: 'thursday',
-                  interval: { from: '18:00', to: '19:00' },
-                },
-              ],
-          
-              ranges: [],
-            })
-          &lt;/script&gt;
-        </code>
-      </pre>
+    &lt;script&gt;
+      data: () =&gt; ({
+        events: [
+          {
+            wday: 'thursday',
+            interval: { from: '14:00', to: '17:00' },
+          },
+          {
+            wday: 'thursday',
+            interval: { from: '18:00', to: '19:00' },
+          },
+        ],
+    
+        ranges: [],
+      })
+    &lt;/script&gt;
+  </code>
+</pre>
     </div>
   </div>
 </template>
@@ -166,7 +166,7 @@
 <script>
 import { defineComponent } from 'vue';
 
-import VueScheduler from '@/index';
+import VueCalendar from '@/index';
 
 import NPMIcon from './components/icons/NPM.vue';
 import GithubIcon from './components/icons/Github.vue';
@@ -179,7 +179,7 @@ export default defineComponent({
   components: {
     NPMIcon,
     GithubIcon,
-    VueScheduler,
+    VueCalendar,
   },
 
   data: () => ({

@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-scheduler">
+  <div class="vue-calendar">
     <Controls
       v-if="controls"
       :todayInPage="todayInPage"
@@ -8,9 +8,9 @@
       @goToToday="goToToday"
     />
 
-    <table class="vue-scheduler__calendar-content">
+    <table class="vue-calendar__calendar-content">
       <thead>
-        <tr class="vue-scheduler__week-days">
+        <tr class="vue-calendar__week-days">
           <WeekDayHeader v-for="weekDay in weekDays" :key="weekDay">
             {{ weekDay }}
           </WeekDayHeader>
@@ -41,7 +41,7 @@ import { defineComponent, PropType } from 'vue';
 
 import dateMixin from '@/mixins/date';
 
-import type { SchedulerData, EventDate, DateRange, WeekDayActionData } from '@/types';
+import type { CalendarData, EventDate, DateRange, WeekDayActionData } from '@/types';
 
 import Week from '@/components/Week.vue';
 import WeekDay from '@/components/WeekDay.vue';
@@ -49,7 +49,7 @@ import Controls from '@/components/Controls.vue';
 import WeekDayHeader from '@/components/WeekDayHeader.vue';
 
 export default defineComponent({
-  name: 'Scheduler',
+  name: 'Calendar',
 
   expose: ['goToToday', 'backPage', 'nextPage'],
 
@@ -62,13 +62,13 @@ export default defineComponent({
 
   mixins: [dateMixin],
 
-  data(): SchedulerData {
+  data(): CalendarData {
     return {
       dates: [],
       selectedRange: [],
       selectionOrigin: null,
       inMutipleSelection: false,
-      schedulerStartDayData: new Date(),
+      calendarStartDayData: new Date(),
       weekDays: [
         'Sunday',
         'Monday',
@@ -104,7 +104,7 @@ export default defineComponent({
   },
 
   mounted() {
-    this.schedulerStartDay = new Date;
+    this.calendarStartDay = new Date;
   },
 
   watch: {
@@ -112,7 +112,7 @@ export default defineComponent({
       this.generateDays();
     },
 
-    schedulerStartDay() {
+    calendarStartDay() {
       this.generateDays();
     },
   },
@@ -153,21 +153,21 @@ export default defineComponent({
     },
 
     goToToday() {
-      this.schedulerStartDay = new Date();
+      this.calendarStartDay = new Date();
     },
 
     backPage() {
-      const nextDate = this.schedulerStartDay.getDate() - this.offsetDays;
-      this.schedulerStartDay = new Date(this.schedulerStartDay.setDate(nextDate));
+      const nextDate = this.calendarStartDay.getDate() - this.offsetDays;
+      this.calendarStartDay = new Date(this.calendarStartDay.setDate(nextDate));
     },
 
     nextPage() {
-      const nextDate = this.schedulerStartDay.getDate() + this.offsetDays;
-      this.schedulerStartDay = new Date(this.schedulerStartDay.setDate(nextDate));
+      const nextDate = this.calendarStartDay.getDate() + this.offsetDays;
+      this.calendarStartDay = new Date(this.calendarStartDay.setDate(nextDate));
     },
 
     generateDays() {
-      this.dates = this.getDatesInOffset(this.schedulerStartDay, this.offsetDays);
+      this.dates = this.getDatesInOffset(this.calendarStartDay, this.offsetDays);
     },
   },
 
@@ -188,15 +188,15 @@ export default defineComponent({
 
     todayInPage() {
       const currTime = Date.now();
-      const startTime = this.schedulerStartDay.getTime();
+      const startTime = this.calendarStartDay.getTime();
       const endTime = this.calenderEndDay.getTime();
 
       return startTime <= currTime && currTime <= endTime;
     },
 
-    schedulerStartDay: {
+    calendarStartDay: {
       get() {
-        return this.schedulerStartDayData;
+        return this.calendarStartDayData;
       },
 
       set(value: Date) {
@@ -207,12 +207,12 @@ export default defineComponent({
           value.setDate(monthDay - weekDay);
         }
 
-        this.schedulerStartDayData = value;
+        this.calendarStartDayData = value;
       },
     },
 
     calenderEndDay() {
-      const date = new Date(this.schedulerStartDay);
+      const date = new Date(this.calendarStartDay);
       const monthDay = date.getDate();
 
       date.setHours(23, 59, 59);
@@ -225,18 +225,18 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.vue-scheduler {
+.vue-calendar {
   width: 100%;
   user-select: none;
   font-family: sans-serif;
 }
 
-.vue-scheduler__calendar-content {
+.vue-calendar__calendar-content {
   display: flex;
   flex-direction: column;
 }
 
-.vue-scheduler__week-days {
+.vue-calendar__week-days {
   display: grid;
   background-color: #FFFFFF;
   border-radius: 2px 2px 0px 0px;

@@ -1,11 +1,11 @@
 <template>
-  <tr class="scheduler__week">
+  <tr class="calendar__week">
     <slot />
   </tr>
 </template>
 
 <style lang="scss" scoped>
-.scheduler__week {
+.calendar__week {
   flex-grow: 1;
   display: grid;
   grid-gap: 1px;

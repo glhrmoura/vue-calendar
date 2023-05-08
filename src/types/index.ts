@@ -29,11 +29,11 @@ export interface WeekDayActionData {
   events: Event[];
 }
 
-export interface SchedulerData {
+export interface CalendarData {
   dates: Date[];
   selectedRange: Date[];
   selectionOrigin: Date | null;
   inMutipleSelection: boolean;
-  schedulerStartDayData: Date;
+  calendarStartDayData: Date;
   weekDays: string[];
 }

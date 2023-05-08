@@ -33,7 +33,7 @@
 
     <div
       v-if="weekDay.events && weekDay.events.length"
-      class="week-day__schedules"
+      class="week-day__calendar"
     >
       <Event
         v-for="(event, index) in allEvents.slice(0, 3)"
@@ -231,7 +231,7 @@ export default defineComponent({
   font-weight: 800;
 }
 
-.week-day__schedules {
+.week-day__calendar {
   display: flex;
   flex-direction: column;
   margin-top: 12px;

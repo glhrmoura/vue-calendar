@@ -1,47 +1,47 @@
 <p align="center">
   <img
     style="object: contain; height: 150px"
-    src="https://raw.githubusercontent.com/glhrmoura/vue-scheduler/main/src/static/images/logo.png"
+    src="https://raw.githubusercontent.com/glhrmoura/vue-calendar/main/src/static/images/logo.png"
   />
 </p>
 
-## Vue Scheduler
+## Vue Calendar
 
-[![npm version](https://img.shields.io/npm/v/@glhrm/vue-scheduler.svg?style=flat-square)](https://www.npmjs.com/package/@glhrm/vue-scheduler)
-[![license](https://img.shields.io/npm/l/@glhrm/vue-scheduler.svg?style=flat-square)](https://github.com/glhrmoura/vue-scheduler/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@glhrm/vue-calendar.svg?style=flat-square)](https://www.npmjs.com/package/@glhrm/vue-calendar)
+[![license](https://img.shields.io/npm/l/@glhrm/vue-calendar.svg?style=flat-square)](https://github.com/glhrmoura/vue-calendar/blob/main/LICENSE)
 
-Vue Scheduler is a library for Vue 3 that provides a complete and easy-to-use solution for managing schedules and appointments. With it, you can define schedules quickly and intuitively, making the scheduling process much more efficient.
+A biblioteca Vue Calendar é um conjunto de componentes Vue 3 projetados para facilitar a criação de calendários interativos em aplicativos Vue.
 
 ### Demo
 
-[**Vue Scheduler**](https://peppy-kringle-3eba76.netlify.app)
+[**Vue Calendar**](https://peppy-kringle-3eba76.netlify.app)
 
 ### Install
 
 ```bash
-$ npm install @glhrm/vue-scheduler --save
+$ npm install @glhrm/vue-calendar --save
 
 or
 
-$ yarn add @glhrm/vue-scheduler
+$ yarn add @glhrm/vue-calendar
 ```
 
 ### Usage
 
 ```html
 <template>
-  <VueScheduler
+  <VueCalendar
     :events="events"
     :ranges="ranges"
   />
 </template>
 
 <script>
-  import VueScheduler from '@glhrm/vue-scheduler';
+  import VueCalendar from '@glhrm/vue-calendar';
 
   export default {
     components: {
-      VueScheduler,
+      VueCalendar,
     },
   
     data() {
@@ -90,13 +90,13 @@ $ yarn add @glhrm/vue-scheduler
 
 ### Properties
 
-#### Scheduler
+#### Calendar
 
 | Property      | Description                                                | Type                | Default        |
 | ------------- | ---------------------------------------------------------- | ------------------- | -------------- |
-| events        | Events that will be shown on the scheduler                 | [Event[]](#event)   | `[]`           |
-| ranges        | A range of dates that will be highlighted in the scheduler | [Range[]](#range)   | `[]`           |
-| rows          | Number of lines that the scheduler will show               | `Number`            | `5`            |
+| events        | Events that will be shown on the calendar                 | [Event[]](#event)   | `[]`           |
+| ranges        | A range of dates that will be highlighted in the calendar | [Range[]](#range)   | `[]`           |
+| rows          | Number of lines that the calendar will show               | `Number`            | `5`            |
 | controls      | Indicates whether action buttons will be shown             | `Boolean`           | `true`         |
 
 #### Event
@@ -133,6 +133,6 @@ $ yarn add @glhrm/vue-scheduler
 
 ### License
 
-[MIT](https://github.com/glhrmoura/vue-scheduler/blob/main/LICENSE)
+[MIT](https://github.com/glhrmoura/vue-calendar/blob/main/LICENSE)
 
 Copyright (c) Guilherme Moura
