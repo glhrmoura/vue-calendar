@@ -1,5 +1,5 @@
 {
-  "name": "@glhrm/vue-calendar",
+  "name": "@glhrmoura/vue-calendar",
   "version": "0.1.6",
   "main": "./dist/vue-calendar.common.js",
   "types": "./dist/index.d.ts",

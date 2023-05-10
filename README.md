@@ -7,8 +7,8 @@
 
 ## Vue Calendar
 
-[![NPM Version](https://img.shields.io/npm/v/@glhrm/vue-calendar.svg?style=for-the-badge)](https://www.npmjs.com/package/@glhrm/vue-calendar)
-[![License](https://img.shields.io/npm/l/@glhrm/vue-calendar.svg?style=for-the-badge)](https://github.com/glhrmoura/vue-calendar/blob/main/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/@glhrmoura/vue-calendar.svg?style=for-the-badge)](https://www.npmjs.com/package/@glhrmoura/vue-calendar)
+[![License](https://img.shields.io/npm/l/@glhrmoura/vue-calendar.svg?style=for-the-badge)](https://github.com/glhrmoura/vue-calendar/blob/main/LICENSE)
 
 Library designed to facilitate the creation of interactive calendars in applications using Vue >=3.
 
@@ -19,13 +19,13 @@ Library designed to facilitate the creation of interactive calendars in applicat
 ### Install
 
 ```bash
-$ npm install @glhrm/vue-calendar --save
+$ npm install @glhrmoura/vue-calendar --save
 ```
 
 or
 
 ```bash
-$ yarn add @glhrm/vue-calendar
+$ yarn add @glhrmoura/vue-calendar
 ```
 
 ### Usage
@@ -39,7 +39,7 @@ $ yarn add @glhrm/vue-calendar
 </template>
 
 <script>
-  import VueCalendar from '@glhrm/vue-calendar';
+  import VueCalendar from '@glhrmoura/vue-calendar';
 
   export default {
     components: {

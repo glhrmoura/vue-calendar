@@ -19,7 +19,7 @@
           title="NPM"
           target="_blank"
           class="header-link"
-          href="https://www.npmjs.com/package/@glhrm/vue-calendar"
+          href="https://www.npmjs.com/package/@glhrmoura/vue-calendar"
         >
           <NPMIcon />
         </a>
