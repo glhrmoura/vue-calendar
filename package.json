@@ -3,7 +3,7 @@
   "version": "0.1.6",
   "main": "./dist/vue-calendar.common.js",
   "types": "./dist/index.d.ts",
-  "description": "Library designed to facilitate the creation of interactive calendars in applications using Vue >=3.",
+  "description": "Library designed to facilitate the creation of interactive calendars in applications using Vue >= 3.",
   "author": "Guilherme Moura <mouraggui@gmail.com>",
   "license": "MIT",
   "private": false,

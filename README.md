@@ -10,7 +10,7 @@
 [![NPM Version](https://img.shields.io/npm/v/@glhrmoura/vue-calendar.svg?style=for-the-badge)](https://www.npmjs.com/package/@glhrmoura/vue-calendar)
 [![License](https://img.shields.io/npm/l/@glhrmoura/vue-calendar.svg?style=for-the-badge)](https://github.com/glhrmoura/vue-calendar/blob/main/LICENSE)
 
-Library designed to facilitate the creation of interactive calendars in applications using Vue >=3.
+Library designed to facilitate the creation of interactive calendars in applications using Vue >= 3.
 
 ### Demo
 
