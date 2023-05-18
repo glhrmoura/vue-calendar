@@ -23,9 +23,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import { ButtonType, ArrowDirection } from '@/types';
+import { ButtonType, ArrowDirection } from '@/lib/types';
 
-import ArrowIcon from '@/components/ArrowIcon.vue';
+import ArrowIcon from '@/lib/components/ArrowIcon.vue';
 
 export default defineComponent({
   name: 'Button',

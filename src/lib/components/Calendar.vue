@@ -39,14 +39,14 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import dateMixin from '@/mixins/date';
+import dateMixin from '@/lib/mixins/date';
 
-import type { CalendarData, EventDate, DateRange, WeekDayActionData } from '@/types';
+import type { CalendarData, EventDate, DateRange, WeekDayActionData } from '@/lib/types';
 
-import Week from '@/components/Week.vue';
-import WeekDay from '@/components/WeekDay.vue';
-import Controls from '@/components/Controls.vue';
-import WeekDayHeader from '@/components/WeekDayHeader.vue';
+import Week from '@/lib/components/Week.vue';
+import WeekDay from '@/lib/components/WeekDay.vue';
+import Controls from '@/lib/components/Controls.vue';
+import WeekDayHeader from '@/lib/components/WeekDayHeader.vue';
 
 export default defineComponent({
   name: 'Calendar',

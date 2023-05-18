@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import type { TimeInterval } from '@/types';
+import type { TimeInterval } from '@/lib/types';
 
 export default defineComponent({
   name: 'Interval',

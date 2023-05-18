@@ -51,11 +51,11 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import dateMixin from '@/mixins/date';
+import dateMixin from '@/lib/mixins/date';
 
-import type { WeekDay } from '@/types';
+import type { WeekDay } from '@/lib/types';
 
-import Event from '@/components/Event.vue';
+import Event from '@/lib/components/Event.vue';
 
 export default defineComponent({
   name: 'WeekDay',

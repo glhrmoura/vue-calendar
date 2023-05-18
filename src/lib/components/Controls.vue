@@ -25,7 +25,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-import Button from '@/components/Button.vue';
+import Button from '@/lib/components/Button.vue';
 
 export default defineComponent({
   name: 'Controls',

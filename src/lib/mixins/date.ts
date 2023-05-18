@@ -1,4 +1,4 @@
-import type { EventDate, WeekDay, DateRange } from '@/types';
+import type { EventDate, WeekDay, DateRange } from '@/lib/types';
 
 const WEEK_DAYS_TITLES_LOW = [
   'sunday',

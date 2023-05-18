@@ -7,9 +7,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
 
-import type { EventDate } from '@/types';
+import type { EventDate } from '@/lib/types';
 
-import Interval from '@/components/Interval.vue';
+import Interval from '@/lib/components/Interval.vue';
 
 export default defineComponent({
   nane: 'Event',
