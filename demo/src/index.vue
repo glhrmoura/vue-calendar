@@ -105,7 +105,7 @@
 import { defineComponent } from 'vue';
 
 import { HighCode } from 'vue-highlight-code';
-import VueCalendar from '../../dist';
+import VueCalendar from '@glhrmoura/vue-calendar';
 
 import codes from './config/codes';
 
@@ -120,8 +120,8 @@ export default defineComponent({
   components: {
     NPMIcon,
     GithubIcon,
+    HighCode,
     VueCalendar,
-    HighCode
   },
 
   data: () => ({
