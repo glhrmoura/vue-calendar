@@ -19,13 +19,13 @@ Library designed to facilitate the creation of interactive calendars in applicat
 ### Install
 
 ```bash
-$ npm install @glhrmoura/vue-calendar --save
+$ yarn add @glhrmoura/vue-calendar
 ```
 
 or
 
 ```bash
-$ yarn add @glhrmoura/vue-calendar
+$ npm install @glhrmoura/vue-calendar
 ```
 
 ### Usage
