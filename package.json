@@ -1,7 +1,7 @@
 {
   "name": "@glhrmoura/vue-calendar",
-  "version": "0.1.3",
-  "main": "./dist/vue-calendar.common.js",
+  "version": "0.1.4",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "description": "Library designed to facilitate the creation of interactive calendars in applications using Vue >= 3.",
   "author": "Guilherme Moura <mouraggui@gmail.com>",
@@ -19,32 +19,28 @@
     "url": "https://github.com/glhrmoura/vue-calendar/issues"
   },
   "scripts": {
-    "lint": "vue-cli-service lint",
-    "serve": "vue-cli-service serve demo/main.ts",
-    "build": "vue-cli-service build demo/main.ts --dest dist",
-    "build:npm": "vue-cli-service build --target lib --name vue-calendar src/index.ts && yarn build:npm:clean && yarn build:npm:ts-d",
-    "build:npm:ts-d": "tsc src/types/index.ts --declaration --emitDeclarationOnly --outDir dist",
-    "build:npm:clean": "rm ./dist/demo.html && rm ./dist/vue-calendar.umd.js && rm ./dist/vue-calendar.umd.min.js"
+    "build:declaration": "tsc src/types/index.ts --declaration --emitDeclarationOnly --outDir dist",
+    "build:lib": "webpack --config webpack.config.js",
+    "build": "yarn build:lib && yarn build:declaration",
+    "prepare": "yarn build"
   },
   "peerDependencies": {
     "vue": "^3.0.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-typescript": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "@vue/eslint-config-typescript": "^9.1.0",
-    "core-js": "^3.8.3",
+    "css-loader": "^6.7.3",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
-    "typescript": "~4.5.5",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
     "vue": "^3.2.13",
-    "vue3-highlightjs": "^1.0.5"
+    "vue-loader": "^17.1.1",
+    "vue-style-loader": "^4.1.3",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
   },
   "files": [
     "dist/*"
