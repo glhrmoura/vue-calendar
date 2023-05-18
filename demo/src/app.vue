@@ -27,76 +27,30 @@
     </header>
 
     <div class="app-demo__content">
-      <h2>
-        Example 1
-      </h2>
+      <template v-for="example in examples" :key="example.title">
+        <h2>
+          {{ example.title }}
+        </h2>
 
-      <HighCode
-        class="code-container"
-        :codeValue="codes.example1"
-        langName=" "
-        fontSize="12px"
-        :copy="false"
-        :theme="'dark'"
-        height="auto"
-        width="100%"
-      />
+        <HighCode
+          class="code-container"
+          :codeValue="example.code"
+          langName=" "
+          fontSize="13px"
+          :copy="false"
+          :theme="'dark'"
+          height="auto"
+          width="100%"
+        />
 
-      <VueCalendar
-        :rows="rowsNumber"
-        :events="calendar1.events"
-        :ranges="calendar1.ranges"
-        @selectDate="onSelectDate"
-        @selectDates="onSelectDates"
-      />
-
-      <h2>
-        Example 2
-      </h2>
-
-      <HighCode
-        class="code-container"
-        :codeValue="codes.example2"
-        langName=" "
-        fontSize="12px"
-        :theme="'dark'"
-        :copy="false"
-        height="auto"
-        width="100%"
-        borderRadius="6px"
-      />
-
-      <VueCalendar
-        :rows="rowsNumber"
-        :events="calendar2.events"
-        :ranges="calendar2.ranges"
-        @selectDate="onSelectDate"
-        @selectDates="onSelectDates"
-      />
-
-      <h2>
-        Example 3
-      </h2>
-
-      <HighCode
-        class="code-container"
-        :codeValue="codes.example3"
-        langName=" "
-        fontSize="12px"
-        :theme="'dark'"
-        :copy="false"
-        height="auto"
-        width="100%"
-        borderRadius="6px"
-      />
-
-      <VueCalendar
-        :rows="rowsNumber"
-        :events="calendar3.events"
-        :ranges="calendar3.ranges"
-        @selectDate="onSelectDate"
-        @selectDates="onSelectDates"
-      />
+        <VueCalendar
+          :rows="rowsNumber"
+          :events="example.data.events"
+          :ranges="example.data.ranges"
+          @selectDate="onSelectDate"
+          @selectDates="onSelectDates"
+        />
+      </template>
     </div>
   </div>
 </template>
@@ -110,100 +64,10 @@ import VueCalendar from '@glhrmoura/vue-calendar';
 import NPMIcon from './components/icons/NPM.vue';
 import GithubIcon from './components/icons/Github.vue';
 
-const DAY_MILLISECONDS = 86400000;
-
-const example1 = `<template>
-  <VueCalendar
-    :events="events"
-    :ranges="ranges"
-  />
-</template>
-
-\<script\>
-const DAY_MILLISECONDS = 86400000;
-
-export default {
-  data: () => ({
-    events: [
-      {
-        all: true,
-        interval: { from: '05:00', to: '06:00' },
-      },
-      {
-        date: new Date(),
-        interval: { from: '06:00', to: '08:45' },
-      },
-    ],
-
-    ranges: [
-      {
-        start: new Date(),
-        end: new Date(Date.now() + (DAY_MILLISECONDS * 8)),
-      },
-    ],
-  })
-}
-\</script\>`;
-
-const example2 = `<template>
-  <VueCalendar
-    :events="events"
-    :ranges="ranges"
-  />
-</template>
-
-\<script\>
-const DAY_MILLISECONDS = 86400000;
-
-export default {
-  data: () => ({
-    events: [
-      {
-        wday: ['monday', 'wednesday', 'thursday', 'friday'],
-        interval: { from: '09:00', to: '11:00' },
-      },
-      {
-        wday: 'thursday',
-        interval: { from: '11:00', to: '12:00' },
-      },
-    ],
-
-    ranges: [
-      {
-        start: new Date(Date.now() + (DAY_MILLISECONDS * 40)),
-        end: new Date(Date.now() + (DAY_MILLISECONDS * 51)),
-      },
-      {
-        start: new Date(Date.now() + (DAY_MILLISECONDS * 75)),
-      },
-    ],
-  })
-}
-\</script\>`;
-
-const example3 = `<template>
-  <VueCalendar :events="events" />
-</template>
-
-\<script\>
-export default {
-  data: () => ({
-    events: [
-      {
-        wday: 'thursday',
-        interval: { from: '14:00', to: '17:00' },
-      },
-      {
-        wday: 'thursday',
-        interval: { from: '18:00', to: '19:00' },
-      },
-    ],
-  }),
-};
-\</script\>`;
+import examples from './examples';
 
 export default defineComponent({
-  name: 'Index',
+  name: 'App',
 
   components: {
     NPMIcon,
@@ -213,71 +77,9 @@ export default defineComponent({
   },
 
   data: () => ({
+    examples,
+  
     rowsNumber: 1,
-
-    codes: {
-      example1,
-      example2,
-      example3,
-    },
-
-    calendar1: {
-      events: [
-        {
-          all: true,
-          interval: { from: '05:00', to: '06:00' },
-        },
-        {
-          date: new Date(),
-          interval: { from: '06:00', to: '08:45' },
-        },
-      ],
-  
-      ranges: [
-        {
-          start: new Date(),
-          end: new Date(Date.now() + (DAY_MILLISECONDS * 8)),
-        },
-      ],
-    },
-
-    calendar2: {
-      events: [
-        {
-          wday: ['monday', 'wednesday', 'thursday', 'friday'],
-          interval: { from: '09:00', to: '11:00' },
-        },
-        {
-          wday: 'thursday',
-          interval: { from: '11:00', to: '12:00' },
-        },
-      ],
-  
-      ranges: [
-        {
-          start: new Date(Date.now() + (DAY_MILLISECONDS * 40)),
-          end: new Date(Date.now() + (DAY_MILLISECONDS * 51)),
-        },
-        {
-          start: new Date(Date.now() + (DAY_MILLISECONDS * 75)),
-        },
-      ],
-    },
-
-    calendar3: {
-      events: [
-        {
-          wday: 'thursday',
-          interval: { from: '14:00', to: '17:00' },
-        },
-        {
-          wday: 'monday',
-          interval: { from: '18:00', to: '19:00' },
-        },
-      ],
-  
-      ranges: [],
-    },
   }),
 
   mounted() {
@@ -371,11 +173,23 @@ h2 {
 
 .code-container {
   margin: 24px 0px;
-  padding: 24px 0px !important;
+  padding: 24px 16px !important;
   z-index: 0 !important;
 
   .code_header {
     display: none !important;
+  }
+
+  .hljs-name, .hljs-title.class_ {
+    color: #71C6B1;
+  }
+
+  .hljs-variable.constant_, .hljs-attr {
+    color: #AADAFA;
+  }
+
+  .hljs-keyword {
+    color: #679AD1;
   }
 }
 </style>
