@@ -144,7 +144,7 @@ export default {
         interval: { from: '14:00', to: '17:00' },
       },
       {
-        wday: 'thursday',
+        wday: 'monday',
         interval: { from: '18:00', to: '19:00' },
       },
     ],
