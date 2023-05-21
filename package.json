@@ -1,60 +1,16 @@
 {
   "name": "@glhrmoura/vue-calendar",
-  "version": "0.1.5",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "description": "Library designed to facilitate the creation of interactive calendars in applications using Vue >= 3.",
-  "author": "Guilherme Moura <mouraggui@gmail.com>",
-  "license": "MIT",
-  "private": false,
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/glhrmoura/vue-calendar"
-  },
-  "bugs": {
-    "url": "https://github.com/glhrmoura/vue-calendar/issues"
-  },
+  "description": "Demo page of @glhrmoura/vue-calendar",
   "scripts": {
-    "dev": "webpack serve --config src/config/webpack.config.dev.js",
-    "build:lib": "webpack --config src/config/webpack.config.prod.js",
-    "build:declaration": "tsc src/lib/types/index.ts --declaration --emitDeclarationOnly --outDir dist",
-    "build": "yarn build:lib && yarn build:declaration",
-    "prepare": "yarn build"
-  },
-  "peerDependencies": {
-    "vue": "^3.0.0"
+    "start": "parcel src/index.html --no-source-maps",
+    "build": "parcel build src/index.html --no-source-maps"
   },
   "devDependencies": {
-    "css-loader": "^6.7.3",
-    "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "html-webpack-plugin": "^5.5.1",
+    "@glhrmoura/vue-calendar": "^0.1.5",
+    "@parcel/transformer-vue": "^2.8.3",
+    "parcel": "^2.8.3",
+    "vue": "^3.3.4",
     "sass": "^1.32.7",
-    "sass-loader": "^12.0.0",
-    "style-loader": "^3.3.2",
-    "ts-loader": "^9.4.2",
-    "typescript": "^5.0.4",
-    "vue": "^3.2.13",
-    "vue-loader": "^17.1.1",
-    "vue-style-loader": "^4.1.3",
-    "webpack": "^5.82.1",
-    "webpack-cli": "^5.1.1",
-    "webpack-dev-server": "^4.15.0"
-  },
-  "files": [
-    "dist/*"
-  ],
-  "keywords": [
-    "Vue",
-    "VueJS",
-    "Vue3",
-    "Calendar",
-    "Components",
-    "Plugin",
-    "Web"
-  ]
+    "vue-highlight-code": "^0.1.16"
+  }
 }
