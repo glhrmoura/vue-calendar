@@ -12,9 +12,6 @@ module.exports = {
 
   devServer: {
     port: 3000,
-    static: {
-      directory: path.join(rootPath, 'src', 'dev', 'public'),
-    },
   },
 
   module: {
@@ -62,7 +59,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(rootPath, 'src', 'dev', 'public', 'index.html'),
+      template: path.resolve(rootPath, 'src', 'dev', 'index.html'),
     }),
   ],
 };
