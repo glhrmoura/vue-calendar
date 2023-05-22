@@ -96,9 +96,15 @@ const examples = [
 </template>
 
 \<script\>
+import VueCalendar from '@glhrmoura/vue-calendar';
+
 const DAY_MILLISECONDS = 86400000;
 
 export default {
+  components: {
+    VueCalendar,
+  },
+
   data: () => ({
     events: [
       {
@@ -153,9 +159,15 @@ export default {
 </template>
 
 \<script\>
+import VueCalendar from '@glhrmoura/vue-calendar';
+
 const DAY_MILLISECONDS = 86400000;
 
 export default {
+  components: {
+    VueCalendar,
+  },
+
   data: () => ({
     events: [
       {
@@ -202,7 +214,13 @@ export default {
 </template>
 
 \<script\>
+import VueCalendar from '@glhrmoura/vue-calendar';
+
 export default {
+  components: {
+    VueCalendar,
+  },
+
   data: () => ({
     events: [
       {
