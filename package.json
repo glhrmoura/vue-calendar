@@ -49,12 +49,12 @@
     "dist/*"
   ],
   "keywords": [
-    "Vue",
-    "VueJS",
-    "Vue3",
-    "Calendar",
-    "Components",
-    "Plugin",
-    "Web"
+    "vue",
+    "vueJS",
+    "vue3",
+    "calendar",
+    "components",
+    "plugin",
+    "web"
   ]
 }
