@@ -45,9 +45,6 @@
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"
   },
-  "files": [
-    "dist/*"
-  ],
   "keywords": [
     "vue",
     "vueJS",
@@ -56,5 +53,10 @@
     "components",
     "plugin",
     "web"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
   ]
 }
