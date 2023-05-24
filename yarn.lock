@@ -28,10 +28,10 @@
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.21.8.tgz#642af7d0333eab9c0ad70b14ac5e76dbde7bfdf8"
   integrity sha512-6zavDGdzG3gUqAdWvlLFfk+36RilI+Pwyuuh7HItyeScCWP3k6i8vKclAQ0bM/0y/Kz/xiwvxhMv9MgTJP5gmA==
 
-"@glhrmoura/vue-calendar@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@glhrmoura/vue-calendar/-/vue-calendar-0.1.5.tgz#aa5ca56c7c3fc65aa9da039f52ce078823559d45"
-  integrity sha512-y1IgPfDSWPOQaH4ZPMBhN6B/KekchlEm8vTlXuF8GfNk8Is4/Igo5vCHAqItBZm7Vg2BgENBMzVdPBJuzKGaXg==
+"@glhrmoura/vue-calendar@0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@glhrmoura/vue-calendar/-/vue-calendar-0.1.6.tgz#9a15fed18ff88c0ec460c0e5502358c5a5c28c6f"
+  integrity sha512-6oD3uHaimMwZ/qwuKG4XiNznkuoGhKby7xNn/4k3Knr251o1oBq7H5rod5QA3R5fvDdWqAlJhSIhl0Dn3qsDUA==
 
 "@jridgewell/gen-mapping@^0.3.0":
   version "0.3.3"
