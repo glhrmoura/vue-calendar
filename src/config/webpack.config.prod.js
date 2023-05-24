@@ -44,7 +44,7 @@ module.exports = {
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: true,
+              appendTsSuffixTo: [/\.vue$/]
             },
           },
         ],
@@ -53,7 +53,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.vue'],
+    extensions: ['.js', '.ts', '.vue'],
     alias: {
       '@': path.resolve(rootPath, 'src'),
     },
