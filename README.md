@@ -1,7 +1,7 @@
 <p align="center">
   <img
     style="object: contain; height: 150px"
-    src="https://raw.githubusercontent.com/glhrmoura/vue-calendar/main/src/lib/static/images/logo.png"
+    src="https://i.imgur.com/IG8rws1.png"
   />
 </p>
 
